@@ -1,0 +1,1980 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vũ Lê Bình · Front-End Developer</title>
+
+    <!-- ── SEO Meta Tags ── -->
+    <meta name="description"
+        content="I am a Front-End developer with over 4 years of experience building beautiful, high-performance, and user-friendly web interfaces. I believe I can bring your designs to life.">
+    <meta name="keywords"
+        content="Vũ Lê Bình, vubinh127, Front-End Developer, Web Developer, HTML, CSS, JavaScript, React, CV, Portfolio">
+    <meta name="author" content="Vũ Lê Bình">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vubinh.id.vn/">
+
+    <!-- ── Open Graph (Facebook, Zalo, LinkedIn...) ── -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vubinh.id.vn/">
+    <meta property="og:title" content="Vũ Lê Bình · Front-End Developer">
+    <meta property="og:description"
+        content="I am a Front-End developer with over 4 years of experience building beautiful, high-performance, and user-friendly web interfaces. I believe I can bring your designs to life.">
+    <meta property="og:image" content="https://github.com/vubinh127.png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Vũ Lê Bình – Front-End Developer">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Vũ Lê Bình – Front-End Developer">
+
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content=" Vũ Lê Bình · Front-End Developer">
+    <meta name="twitter:description"
+        content="I am a Front-End developer with over 4 years of experience building beautiful, high-performance, and user-friendly web interfaces. I believe I can bring your designs to life.">
+    <meta name="twitter:image" content="https://github.com/vubinh127.png">
+    <meta name="twitter:image:alt" content="Vũ Lê Bình – Front-End Developer">
+
+    <link rel="icon" type="image/png" href="https://github.com/vubinh127.png">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        :root {
+            --bg: #f9f8f6;
+            --sidebar-bg: #111110;
+            --sidebar-w: 230px;
+            --text: #1a1a18;
+            --black: #000;
+            --accent: #c9a96e;
+            --accent-light: #f0e6d3;
+            --border: #e5e3de;
+            --white: #ffffff;
+        }
+
+        body.dark {
+            --bg: #151514;
+            --sidebar-bg: #0a0a09;
+            --text: #e8e6e1;
+            --black: #c8c5be;
+            --accent: #d4b07a;
+            --accent-light: #272318;
+            --border: #2c2b29;
+            --white: #1e1d1b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* ── SIDEBAR ── */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-w);
+            height: 100vh;
+            background: var(--sidebar-bg);
+            display: flex;
+            flex-direction: column;
+            padding: 32px 0;
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .sidebar-avatar {
+            padding: 0 24px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .avatar-ring {
+            width: 72px;
+            height: 72px;
+            flex-shrink: 0;
+        }
+
+        .avatar-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sidebar-bg);
+        }
+
+        .sidebar-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            letter-spacing: 0.06em;
+        }
+
+        .sidebar-role {
+            font-size: 10px;
+            color: var(--accent);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        nav {
+            flex: 1;
+            padding: 24px 0;
+        }
+
+        nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 24px;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+            font-weight: 500;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #fff;
+            border-left-color: var(--accent);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        nav a svg {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-footer {
+            padding: 20px 24px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .social-row a {
+            color: rgba(255, 255, 255, 0.3);
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        .social-row a:hover {
+            color: var(--accent);
+        }
+
+        .social-row svg {
+            width: 13px;
+            height: 13px;
+            display: block;
+        }
+
+        .sidebar-contact {
+            font-size: 10px;
+            color: white;
+            line-height: 1.9;
+        }
+
+        .btn-lang {
+            display: flex;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .btn-lang span {
+            flex: 1;
+            text-align: center;
+            padding: 7px 0;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.3);
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .btn-lang span.lang-active {
+            background: var(--accent);
+            color: #111;
+        }
+
+        .btn-lang span:not(.lang-active):hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ── MAIN ── */
+        .main {
+            margin-left: var(--sidebar-w);
+            min-height: 100vh;
+        }
+
+        .breadcrumb-bar {
+            position: sticky;
+            top: 0;
+            background: rgba(249, 248, 246, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 64px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--black);
+            z-index: 10;
+        }
+
+        .breadcrumb-bar span {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .breadcrumb-bar svg {
+            width: 9px;
+            height: 9px;
+        }
+
+        section {
+            padding: 72px 64px 80px;
+            border-bottom: 1px solid var(--border);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        .section-label {
+            font-size: 20px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        /* ── HOME — avatar LEFT ── */
+        .home-avatar-frame {
+            width: 200px;
+            height: 250px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .home-avatar-frame::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .home-avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        #home .greeting {
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 14px;
+        }
+
+        #home .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(40px, 4vw, 66px);
+            font-weight: 300;
+            line-height: 1.0;
+            letter-spacing: -0.01em;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        #home .name strong {
+            font-weight: 600;
+        }
+
+        #home .role {
+            font-size: 13px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 28px;
+        }
+
+        #home .bio {
+            font-size: 16px;
+            color: var(--black);
+            line-height: 1.85;
+            max-width: 460px;
+            font-weight: 300;
+            margin-bottom: 32px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 420px;
+            border: 1px solid var(--border);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--black);
+            transition: background 0.2s;
+        }
+
+        .info-item:hover {
+            background: var(--accent-light);
+        }
+
+        .info-item:nth-child(2n) {
+            border-right: none;
+        }
+
+        .info-item:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .info-item svg {
+            width: 13px;
+            height: 13px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* ── ABOUT ── */
+        .about-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+            font-weight: 300;
+            line-height: 1.3;
+            margin-bottom: 18px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: var(--black);
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .about-extra {
+            margin-top: 48px;
+            padding: 28px 32px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-extra::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .about-extra h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .about-extra p {
+            font-size: 15px;
+            color: var(--black);
+            line-height: 1.85;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .stat-list {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 22px;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-item:hover {
+            background: var(--accent-light);
+        }
+
+        .stat-num {
+            font-size: 30px;
+            font-weight: 300;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--black);
+            text-align: right;
+            line-height: 1.5;
+        }
+
+        .skill-head {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .skill-pct {
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        .skill-bar {
+            height: 2px;
+            background: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--accent);
+            width: 0;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ── WORK ── */
+        .job {
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .job:first-child {
+            padding-top: 0;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-date {
+            font-size: 12px;
+            color: var(--black);
+            letter-spacing: 0.08em;
+            padding-top: 4px;
+        }
+
+        .job-badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 2px;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .job-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .job-company {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .job-desc {
+            font-size: 16px;
+            color: var(--black);
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 520px;
+        }
+
+        .job-desc-list {
+            font-size: 15px;
+            color: var(--black);
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 520px;
+            padding-left: 18px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .job-desc-list li::marker {
+            color: var(--accent);
+        }
+
+        .job-tag {
+            font-size: 10px;
+            padding: 3px 10px;
+            border: 1px solid var(--border);
+            color: var(--black);
+            border-radius: 2px;
+        }
+
+        /* ── PORTFOLIO ── */
+        .proj-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin: 20px 0 40px;
+        }
+
+        .proj-card {
+            background: var(--bg);
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: background 0.2s;
+            border: 1px solid var(--border);
+        }
+
+        .proj-card:hover {
+            background: var(--white);
+        }
+
+        .proj-company {
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--black);
+            line-height: 1;
+            margin-top: 20px;
+        }
+
+        .proj-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .proj-desc {
+            font-size: 12px;
+            color: var(--black);
+            line-height: 1.7;
+            font-weight: 300;
+            flex: 1;
+        }
+
+        .proj-desc .desc {
+            font-style: italic;
+        }
+
+        .proj-stack {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .proj-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 4px;
+            transition: color 0.2s;
+        }
+
+        .proj-link a {
+            color: var(--text);
+        }
+
+        .proj-link:hover {
+            color: var(--accent);
+        }
+
+        .proj-link svg {
+            width: 10px;
+            height: 10px;
+        }
+
+        /* ── EDUCATION ── */
+        .edu-item {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .edu-item:first-child {
+            padding-top: 0;
+        }
+
+        .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .edu-year {
+            font-size: 12px;
+            color: var(--black);
+            letter-spacing: 0.08em;
+            padding-top: 4px;
+        }
+
+        .edu-degree {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .edu-school {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .edu-note {
+            font-size: 14px;
+            color: var(--black);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            border: 1px solid var(--border);
+            margin-top: 48px;
+        }
+
+        .cert-card {
+            background: var(--bg);
+            padding: 22px;
+            transition: background 0.2s;
+        }
+
+        .cert-card:hover {
+            background: var(--white);
+        }
+
+        .cert-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .cert-org {
+            font-size: 12px;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .cert-year {
+            font-size: 11px;
+            color: var(--black);
+        }
+
+        /* ── CONTACT ── */
+        #contact {
+            min-height: auto;
+            padding-bottom: 80px;
+        }
+
+        .contact-big {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(30px, 3.5vw, 44px);
+            font-weight: 300;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .contact-sub {
+            font-size: 13px;
+            color: var(--black);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 28px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--text);
+            padding-bottom: 4px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .contact-email:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--black);
+            transition: background 0.2s;
+        }
+
+        .contact-row a {
+            color: var(--black);
+            text-decoration: underline;
+        }
+
+        .contact-row:last-child {
+            border-bottom: none;
+        }
+
+        .contact-row:hover {
+            background: var(--accent-light);
+            color: var(--text);
+        }
+
+        .contact-row svg {
+            width: 13px;
+            height: 13px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .contact-row strong {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text);
+            margin-bottom: 1px;
+            font-weight: 600;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+            color: var(--black);
+            letter-spacing: 0.08em;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (max-width: 991px) {
+            :root {
+                --sidebar-w: 100%;
+            }
+
+            .sidebar {
+                position: fixed;
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 16px;
+                overflow: visible;
+            }
+
+            .sidebar-avatar {
+                border: none;
+                padding: 0;
+            }
+
+            .sidebar-name,
+            .sidebar-role {
+                display: none;
+            }
+
+            .sidebar nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--sidebar-bg);
+                padding: 0 0 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .sidebar.show-nav nav {
+                display: flex;
+            }
+
+            .sidebar-footer {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+                margin-top: 70px;
+            }
+
+            .breadcrumb-bar {
+                padding: 12px 16px;
+            }
+
+            section {
+                padding: 48px 16px;
+            }
+
+            #home .d-flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .home-avatar-frame {
+                width: 140px;
+                height: 180px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proj-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #home .name {
+                font-size: 32px;
+            }
+
+            .about-title {
+                font-size: 24px;
+            }
+
+            .contact-big {
+                font-size: 24px;
+            }
+        }
+
+        #menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+        }
+
+        @media (min-width: 992px) {
+            .sidebar nav {
+                display: flex !important;
+            }
+        }
+
+        /* ── DARK MODE BUTTON ── */
+        #dark-toggle {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--text);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        #dark-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.18);
+            transform: translateY(-1px);
+        }
+
+        #dark-toggle svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            transition: transform 0.4s ease;
+        }
+
+        #dark-toggle:hover svg {
+            transform: rotate(20deg);
+        }
+
+        #dark-toggle .toggle-label {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 991px) {
+            #dark-toggle {
+                bottom: 18px;
+                right: 18px;
+                padding: 10px;
+                border-radius: 50%;
+                width: 42px;
+                height: 42px;
+                justify-content: center;
+            }
+
+            #dark-toggle .toggle-label {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="sidebar">
+        <div class="sidebar-avatar d-flex align-items-center gap-3">
+            <div class="avatar-ring">
+                <img src="https://github.com/vubinh127.png" alt="Vũ Lê Bình">
+            </div>
+            <div>
+                <div class="sidebar-name">Vũ Lê Bình</div>
+                <div class="sidebar-role">Front-End Dev</div>
+            </div>
+        </div>
+
+        <nav class="py-4">
+            <a href="#home" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>Home
+            </a>
+            <a href="#about">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="5" />
+                    <path d="M20 21a8 8 0 1 0-16 0" />
+                </svg>About
+            </a>
+            <a href="#work">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="20" height="14" x="2" y="7" rx="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>Work Profile
+            </a>
+            <a href="#portfolio">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="7" height="7" x="3" y="3" rx="1" />
+                    <rect width="7" height="7" x="14" y="3" rx="1" />
+                    <rect width="7" height="7" x="14" y="14" rx="1" />
+                    <rect width="7" height="7" x="3" y="14" rx="1" />
+                </svg>Portfolio
+            </a>
+            <a href="#education">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>Education
+            </a>
+            <a href="#contact">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>Contact
+            </a>
+        </nav>
+
+        <div class="sidebar-footer d-flex flex-column gap-2">
+            <div class="social-row d-flex gap-3">
+                <a href="https://github.com/vubinh127" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/vubinhh127" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <!-- <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="20" x="2" y="2" rx="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                </a> -->
+            </div>
+            <div class="sidebar-contact">vubinh120720@gmail.com<br>0813626639</div>
+            <div class="btn-lang" id="lang-toggle">
+                <span data-lang="vi" class="lang-active">🇻🇳 VI</span>
+                <span data-lang="en">🇬🇧 EN</span>
+            </div>
+        </div>
+
+        <button id="menu-toggle" class="d-lg-none">☰</button>
+        <div id="sidebar-overlay"></div>
+    </header>
+
+    <main class="main" id="printable">
+
+        <div class="breadcrumb-bar">
+            HOME
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+            </svg>
+            <span id="bc-section">HỒ SƠ CÁ NHÂN</span>
+        </div>
+
+
+        <section id="home">
+            <div class="section-label">
+                <span class="t" data-vi="Hồ sơ cá nhân" data-en="My Profile">Hồ sơ cá nhân</span>
+            </div>
+            <div class="d-flex align-items-center gap-5 mt-3">
+
+                <div class="home-avatar-frame reveal flex-shrink-0">
+                    <img src="https://github.com/vubinh127.png" alt="Vũ Lê Bình">
+                </div>
+
+                <div>
+                    <div class="greeting reveal">
+                        <span class="t" data-vi="Xin chào, tôi là" data-en="Hello everybody, I am">Xin chào, tôi
+                            là</span>
+                    </div>
+                    <div class="name reveal">Vũ Lê <strong>Bình</strong></div>
+                    <div class="role reveal">Front-End Developer</div>
+                    <p class="bio reveal">
+                        <span class="t"
+                            data-vi="Tôi là lập trình viên Front-End với 4+ năm kinh nghiệm xây dựng giao diện web đẹp, hiệu năng cao và thân thiện người dùng. Tôi tin rằng mình có thể biến những thiết kế của bạn thành hiện thực."
+                            data-en="I am a Front-End developer with over 4 years of experience building beautiful, high-performance, and user-friendly web interfaces. I believe I can bring your designs to life.">
+                            Tôi là lập trình viên Front-End với 4+ năm kinh nghiệm xây dựng giao diện web đẹp, hiệu năng
+                            cao và thân thiện người dùng. Tôi tin rằng mình có thể biến những thiết kế của bạn thành
+                            hiện thực.
+                        </span>
+                    </p>
+                    <div class="info-grid reveal">
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="18" height="18" x="3" y="4" rx="2" />
+                                <path d="M16 2v4M8 2v4M3 10h18" />
+                            </svg>
+                            <span class="t" data-vi="12 tháng 7, 2000" data-en="July 12, 2000">12 tháng 7, 2000</span>
+                        </div>
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12" />
+                            </svg>
+                            0813626639
+                        </div>
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            vubinh120720@gmail.com
+                        </div>
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span class="t" data-vi="Hà Nội, Việt Nam" data-en="Hanoi, Vietnam">Hà Nội, Việt Nam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="about">
+            <div class="section-label"><span class="t" data-vi="Giới thiệu" data-en="About Me">Giới thiệu</span></div>
+            <div class="row g-5 mt-1">
+                <div class="col-md-6">
+                    <div class="about-title reveal">
+                        <span class="t" data-vi="Tôi tạo ra những trải nghiệm web đáng nhớ."
+                            data-en="I craft memorable web experiences that matter.">Tôi tạo ra những <em>trải nghiệm
+                                web</em> đáng
+                            nhớ.</span>
+                    </div>
+                    <p class="about-text reveal">
+                        <span class="t"
+                            data-vi="Với nền tảng về thiết kế và lập trình, tôi có khả năng chuyển hóa ý tưởng thành sản phẩm thực tế. Tôi chú trọng đến chi tiết — từ animation mượt mà đến code sạch, có thể bảo trì. Ngoài công việc, tôi thường đóng góp vào các dự án open-source và chia sẻ kiến thức trong cộng đồng dev Việt Nam."
+                            data-en="With a background in both design and engineering, I bridge the gap between ideas and execution. I care about details — from smooth animations to clean, maintainable code. Outside work, I contribute to open-source and share knowledge in the Vietnamese dev community.">
+                            Với nền tảng về thiết kế và lập trình, tôi có khả năng chuyển hóa ý tưởng thành sản phẩm
+                            thực tế. Tôi chú
+                            trọng đến chi tiết — từ animation mượt mà đến code sạch, có thể bảo trì. Ngoài công việc,
+                            tôi thường đóng
+                            góp vào các dự án open-source và chia sẻ kiến thức trong cộng đồng dev Việt Nam.
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="stat-list reveal">
+                        <div class="stat-item">
+                            <div class="stat-num">4+</div>
+                            <div class="stat-label"><span class="t" data-vi="Năm kinh nghiệm chuyên nghiệp"
+                                    data-en="Years of experience">Năm kinh nghiệm<br>chuyên nghiệp</span></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">30+</div>
+                            <div class="stat-label"><span class="t" data-vi="Dự án đã hoàn thành"
+                                    data-en="Projects completed">Dự án
+                                    đã<br>hoàn thành</span></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">12+</div>
+                            <div class="stat-label"><span class="t" data-vi="Khách hàng hài lòng"
+                                    data-en="Happy clients">Khách
+                                    hàng<br>hài lòng</span></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">5★</div>
+                            <div class="stat-label"><span class="t" data-vi="Đánh giá từ client"
+                                    data-en="Client rating">Đánh
+                                    giá<br>từ client</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-label mt-5"><span class="t" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</span></div>
+            <div class="row g-4 mt-1">
+                <div class="col-md-6 d-flex flex-column gap-3">
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>HTML / CSS / SASS</span><span class="skill-pct">95%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>JavaScript / TypeScript</span><span class="skill-pct">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>React / Next.js</span><span class="skill-pct">30%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="30"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>WordPress</span><span class="skill-pct">60%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="60"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>Figma/AdobeXD/Latency</span><span class="skill-pct">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="70"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex flex-column gap-3">
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>Vue.js / Nuxt</span><span class="skill-pct">30%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="30"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>Tailwind CSS / Bootstrap</span><span class="skill-pct">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>Drupal</span><span class="skill-pct">60%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="60"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head"><span>Node.js / REST API</span><span class="skill-pct">40%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="40"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-extra reveal">
+                <h3>
+                    <span class="t" data-vi="Sở thích &amp; Kỹ năng khác" data-en="Additional Skills &amp; Interests">Sở
+                        thích &amp; Kỹ năng khác</span>
+                </h3>
+                <p>
+                    <span class="t"
+                        data-vi="Ngoài lập trình front-end, tôi còn yêu thích dựng phim và khám phá các trải nghiệm kỹ thuật số qua game và sản phẩm tương tác. Những sở thích này giúp tôi rèn luyện tư duy hình ảnh, sáng tạo hơn và nâng cao nhạy cảm về trải nghiệm người dùng."
+                        data-en="Besides front-end development, I also enjoy video editing and exploring digital experiences through games and interactive products. These interests help me improve my visual thinking, creativity, and user experience awareness.">
+                        Ngoài lập trình front-end, tôi còn yêu thích dựng phim và khám phá các trải nghiệm kỹ thuật số
+                        qua game và sản phẩm tương tác. Những sở thích này giúp tôi rèn luyện tư duy hình ảnh, sáng tạo
+                        hơn và nâng cao nhạy cảm về trải nghiệm người dùng.
+                    </span>
+                </p>
+            </div>
+        </section>
+
+
+        <section id="work">
+            <div class="section-label"><span class="t" data-vi="Kinh nghiệm làm việc" data-en="Work Profile">Kinh nghiệm
+                    làm
+                    việc</span></div>
+            <div class="timeline mt-4">
+                <div class="job reveal">
+                    <div class="row g-4">
+                        <div class="col col-auto" style="min-width:160px">
+                            <div class="job-date">27/06/2022 — <span class="t" data-vi="Hiện tại" data-en="Present">Hiện
+                                    tại</span></div>
+                            <div class="job-badge">Full-time</div>
+                        </div>
+                        <div class="col col-auto">
+                            <div class="job-title">Front-End Developer</div>
+                            <div class="job-company t" data-vi="Công ty cổ phần giải pháp Ngọn Sóng Mới"
+                                data-en="NEWWAVE SOLUTIONS JOINT STOCK COMPANY">Công ty cổ phần giải pháp Ngọn Sóng Mới
+                                · <span class="t" data-vi="Hà Nội" data-en="Hanoi">Hà Nội</span>
+                            </div>
+                            <ul class="job-desc-list">
+                                <li><span class="t" data-vi="Xây dựng các thành phần hiển thị trực tiếp với người dùng"
+                                        data-en="Building user-facing components and interfaces">Xây dựng các thành phần
+                                        hiển thị trực tiếp với người dùng</span></li>
+                                <li><span class="t"
+                                        data-vi="Thiết kế và phát triển bố cục, giao diện trực quan và các yếu tố tương tác bằng HTML, CSS và JavaScript"
+                                        data-en="Designing and developing layouts, visual interfaces, and interactive elements using HTML, CSS and JavaScript">Thiết
+                                        kế và phát triển bố cục, giao diện trực quan và các yếu tố tương tác bằng HTML,
+                                        CSS và JavaScript</span></li>
+                                <li><span class="t" data-vi="Xây dựng website bằng Drupal, Wordpress"
+                                        data-en="Building websites using Drupal, Wordpress">Xây dựng website bằng
+                                        Drupal, Wordpress</span></li>
+                                <li><span class="t"
+                                        data-vi="Phối hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án"
+                                        data-en="Collaborating with team members to ensure project quality and progress.">Phối
+                                        hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án</span>
+                                </li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                <span class="job-tag">HTML/CSS</span>
+                                <span class="job-tag">JavaScript</span>
+                                <span class="job-tag">Wordpress</span>
+                                <span class="job-tag">Drupal</span>
+                                <span class="job-tag">PHP</span>
+                                <span class="job-tag">Figma/Latency/Psd/AdobeXD</span>
+                                <span class="job-tag">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="job reveal">
+                <div class="row g-4">
+                    <div class="col col-auto" style="min-width:160px">
+                        <div class="job-date">2022 — <span class="t" data-vi="Hiện tại" data-en="Present">Hiện
+                                tại</span></div>
+                        <div class="job-badge">Part-time</div>
+                    </div>
+                    <div class="col col-auto">
+                        <div class="job-title">WordPress Developer</div>
+                        <div class="job-company">Freelancer · Remote</div>
+                        <ul class="job-desc-list">
+                            <li><span class="t" data-vi="Xây dựng các thành phần hiển thị trực tiếp với người dùng"
+                                    data-en="Building user-facing components and interfaces">Xây dựng các thành phần
+                                    hiển thị trực tiếp với người dùng</span></li>
+                            <li><span class="t"
+                                    data-vi="Thiết kế, xây dựng website, phát triển tính năng theo yêu cầu của khách hàng bằng Wordpress"
+                                    data-en="Designing, building websites, and developing features according to client requirements using WordPress.">Thiết
+                                    kế, xây dựng website, phát triển tính năng theo yêu cầu của khách hàng bằng
+                                    Wordpress </span></li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="job-tag">HTML/CSS</span>
+                            <span class="job-tag">JavaScript</span>
+                            <span class="job-tag">WordPress</span>
+                            <span class="job-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="job reveal">
+                <div class="row g-4">
+                    <div class="col col-auto" style="min-width:160px">
+                        <div class="job-date">6/12/2021 — 24/3/2022</div>
+                        <div class="job-badge">Full-time</div>
+                    </div>
+                    <div class="col col-auto">
+                        <div class="job-title">Fullstack Developer</div>
+                        <div class="job-company t" data-vi="Công ty cổ phần thanh toán Hưng Hà"
+                            data-en="HUNG HA PAY JOINT STOCK COMPANY">Công ty cổ phần thanh toán Hưng Hà · <span
+                                class="t" data-vi="Hà Nội" data-en="Hanoi">Hà Nội</span></div>
+                        <ul class="job-desc-list">
+                            <li><span class="t"
+                                    data-vi="Cắt CV, cắt giao diện, code các chức năng, hoàn thiện website dành cho ứng viên và nhà tuyển dụng"
+                                    data-en="Cutting CVs, cutting interfaces, coding functionalities, completing the website for candidates and recruiters.">Cắt
+                                    CV, cắt giao diện, code các chức năng, hoàn thiện website dành cho ứng viên và nhà
+                                    tuyển dụng</span></li>
+                            <li><span class="t"
+                                    data-vi="Phát triển các tính năng mới, sửa lỗi và tối ưu hóa hiệu suất của website"
+                                    data-en="Developing new features, fixing bugs, and optimizing website performance.">Phát
+                                    triển các tính năng mới, sửa lỗi và tối ưu hóa hiệu suất của website</span></li>
+                            <li><span class="t"
+                                    data-vi="Phối hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án"
+                                    data-en="Collaborating with team members to ensure project quality and progress.">Phối
+                                    hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án</span></li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="job-tag">HTML/CSS</span>
+                            <span class="job-tag">JavaScript</span>
+                            <span class="job-tag">PHP(CodeIgniter)</span>
+                            <span class="job-tag">MySQL</span>
+                            <span class="job-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section id="portfolio">
+            <div class="section-label">Portfolio</div>
+
+
+            <div class="proj-company">
+                <span class="t" data-vi="Công ty cổ phần thanh toán Hưng Hà"
+                    data-en="HUNG HA PAY JOINT STOCK COMPANY">Công ty cổ phần thanh toán Hưng Hà</span>
+            </div>
+
+            <div class="proj-grid">
+                <div class="proj-card reveal">
+                    <div class="proj-title">Website Việc làm theo giờ</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Nền tảng tuyển dụng việc làm theo giờ, hỗ trợ tìm kiếm và đăng tuyển các công việc part-time, thời vụ và linh hoạt."
+                            data-en="An hourly and part-time job platform that helps users search and apply for flexible employment opportunities.">
+                            Nền tảng tuyển dụng việc làm theo giờ, hỗ trợ tìm kiếm và đăng tuyển các công việc
+                            part-time, thời vụ và linh hoạt.
+                        </p>
+                        <p class="t"
+                            data-vi=" - Thiết kế site vieclamtheogio cho trang vieclam123, là website tìm việc làm theo giờ của trang vieclam123.vn.- Phát triển giao diện và các chức năng tương tác giữa ứng viên và nhà tuyển dụng, xây dựng website bằng CodeIgniter3."
+                            data-en="- Designing the vieclamtheogio site for vieclam123, a website for finding hourly jobs on vieclam123.vn.- Developing the interface and interactive functions between candidates and employers, building the website using CodeIgniter3.">
+                            - Thiết kế site vieclamtheogio cho trang vieclam123, là website tìm việc làm theo giờ của
+                            trang vieclam123.vn <br>
+                            - Phát triển giao diện và các chức năng tương tác giữa ứng viên và nhà tuyển dụng, xây dựng
+                            website bằng CodeIgniter3
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML/CSS - JavaScript(Jquery) - PHP(CodeIgniter3)</div>
+                    <a href="https://vieclamtheogio.vieclam123.vn/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="proj-company">
+                <span class="t" data-vi="Công ty cổ phần giải pháp Ngọn Sóng Mới"
+                    data-en="NEWWAVES SOLUTIONS JOINT STOCK COMPANY">Công ty cổ phần giải pháp Ngọn Sóng Mới</span>
+            </div>
+
+            <div class="proj-grid">
+                <div class="proj-card reveal">
+                    <div class="proj-title">Up-t / Up-t English</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="UP-T.jp là website thương mại điện tử cho phép người dùng thiết kế và đặt in sản phẩm custom như áo thun, phụ kiện và quà tặng cá nhân hóa."
+                            data-en="UP-T.jp is an e-commerce website that enables users to create and order custom-printed products such as T-shirts, accessories, and personalized goods.">
+                            UP-T.jp là website thương mại điện tử cho phép người dùng thiết kế và đặt in sản phẩm custom
+                            như áo thun, phụ kiện và quà tặng cá nhân hóa.
+                        </p>
+                        <p class="t"
+                            data-vi="- Sửa giao diện,phát triển thêm tính năng, hoàn thành các task được giao từ phía khách hàng, tối ưu hiệu suất cho website up-t.jp"
+                            data-en="- Modify the interface, develop additional features, complete assigned tasks from clients, and optimize the performance of the up-t.jp website.">
+                            - Sửa giao diện,phát triển thêm tính năng, hoàn thành các task được giao từ phía khách hàng,
+                            tối ưu hiệu suất cho website, kiểm tra phát hiện lỗi trong trải nghiệm người dùng để
+                            sửa chữa và báo cho các bộ phận liên quan.
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, jQuery, PHP</div>
+                    <div class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+
+                        <a href="https://up-t.jp/" target="_blank">Up-t</a>
+                        <a href="https://up-t.net/" target="_blank">Up-t English</a>
+                    </div>
+                </div>
+                <div class="proj-card reveal">
+                    <div class="proj-title">
+                        <span class="t" data-vi="Tổ hợp dự án Nakasha" data-en="Nakasha Project Collection">Tổ hợp dự án
+                            Nakasha</span>
+                    </div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Hệ thống / nhóm website thuộc lĩnh vực bảo tàng, văn hóa và lưu trữ số, hỗ trợ người dùng tra cứu, khám phá và tiếp cận các tài liệu, hiện vật, bộ sưu tập và nội dung triển lãm thông qua giao diện trực tuyến hiện đại và thân thiện."
+                            data-en="This system/group of websites, belonging to the field of museums, culture, and digital archives, supports users in searching, exploring, and accessing documents, artifacts, collections, and exhibition content through a modern and user-friendly online interface.">
+                            Hệ thống / nhóm website thuộc lĩnh vực bảo tàng, văn hóa và lưu trữ số, hỗ trợ người dùng
+                            tra cứu, khám phá và tiếp cận các tài liệu, hiện vật, bộ sưu tập và nội dung triển lãm thông
+                            qua giao diện trực tuyến hiện đại và thân thiện.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kế và xây dựng website bảo tàng bằng Drupal CMS dựa trên bản thiết kế từ khách hàng, phát triển các tính năng tương tác, giữa người dùng và trang web."
+                            data-en="- Design and build museum websites using Drupal CMS based on client blueprints, developing interactive features between users and the website.">
+                            - Thiết kế và xây dựng website bảo tàng bằng Drupal CMS dựa trên bản thiết kế từ khách hàng,
+                            phát triển các tính năng tương tác, giữa người dùng và trang web
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, jQuery, Bootstrap, PHP, Drupal</div>
+                    <div class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+
+                        <a href="https://digital-sagamihara.jp/" target="_blank">Sagamihara</a>
+                        <a href="https://www.rekishi-archive.city.naha.okinawa.jp/" target="_blank">Naha</a>
+                        <a href="https://nagahama-rekihaku.jp/" target="_blank">Nagahama</a>
+                        <a href="https://www.osaka-art-museum.jp/" target="_blank">Osaka</a>
+                    </div>
+                </div>
+                <div class="proj-card reveal">
+                    <div class="proj-title">Alpine</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Alpine.com.au là website giới thiệu và kinh doanh các thiết bị âm thanh, giải trí và phụ kiện điện tử dành cho ô tô tại thị trường Australia."
+                            data-en="Alpine.com.au is an automotive electronics and in-car entertainment website focused on audio systems, infotainment products, and vehicle-specific upgrade solutions for the Australian market.">
+                            Alpine.com.au là website giới thiệu và kinh doanh các thiết bị âm thanh, giải trí và phụ
+                            kiện điện tử dành cho ô tô tại thị trường Australia.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kế và xây dựng trang web, tối ưu hiệu suất và trải nghiệm người dùng, đảm bảo trang web hoạt động mượt mà trên mọi thiết bị."
+                            data-en="- Design and build websites, optimize performance and user experience, ensuring the website runs smoothly on all devices.">
+                            - Thiết kế và xây dựng trang web theo design, tối ưu hiệu suất và trải nghiệm người dùng,
+                            đảm bảo trang web hoạt động mượt mà trên mọi thiết bị.
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, jQuery, Bootstrap, PHP, WordPress</div>
+                    <a href="https://www.alpine.com.au/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="proj-card reveal">
+                    <div class="proj-title">
+                        Welaunchers.com
+                    </div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Website giới thiệu dịch vụ thiết kế và phát triển website dành cho doanh nghiệp."
+                            data-en="A business website focused on web design and development services.">
+                            Website giới thiệu dịch vụ thiết kế và phát triển website dành cho doanh nghiệp.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kết và xây dựng giao diện, hoàn thành các chức năng theo yêu cầu phía khách hàng"
+                            data-en="- Design and build user interfaces, complete features according to client requirements">
+                            - Thiết kết và xây dựng giao diện, hoàn thành các chức năng theo yêu cầu phía khách hàng
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, VueJs, Tailwind CSS</div>
+                    <a href="https://welaunchers.com/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="proj-company">
+                Freelance
+            </div>
+
+            <div class="proj-grid">
+                <div class="proj-card reveal">
+                    <div class="proj-title">UFO</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi=" Nền tảng giáo dục / website đào tạo ngoại ngữ trực tuyến, tập trung vào luyện thi và phát triển năng lực ngôn ngữ cho học viên thông qua các chương trình đào tạo IELTS, TOPIK và các chứng chỉ quốc tế."
+                            data-en="An educational website / learning platform focused on language training and exam preparation for certifications such as IELTS, TOPIK, and other international language programs.">
+                            Nền tảng giáo dục / website đào tạo ngoại ngữ trực tuyến, tập trung vào luyện thi và phát
+                            triển năng lực ngôn ngữ cho học viên thông qua các chương trình đào tạo IELTS, TOPIK và các
+                            chứng chỉ quốc tế.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng"
+                            data-en="- Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">
+                            -Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo
+                            yêu cầu phía khách hàng
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, Bootstrap, Jquery, PHP, WordPress</div>
+                    <a href="https://ufoclass.com/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="proj-card reveal">
+                    <div class="proj-title">PTCNVN</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Website doanh nghiệp được xây dựng nhằm giới thiệu năng lực, lĩnh vực hoạt động và định hướng phát triển của công ty trong các mảng xây dựng công trình khai thác mỏ, thương mại, dịch vụ và công nghệ cơ giới hóa hiện đại."
+                            data-en="A corporate website developed to showcase the company’s capabilities, business sectors, and development direction across mining construction, trade, services, and modern mechanized technology solutions.">
+                            Website doanh nghiệp được xây dựng nhằm giới thiệu năng lực, lĩnh vực hoạt động và định
+                            hướng phát triển của công ty trong các mảng xây dựng công trình khai thác mỏ, thương mại,
+                            dịch vụ và công nghệ cơ giới hóa hiện đại.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng"
+                            data-en="- Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">
+                            - Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo
+                            yêu
+                            cầu phía khách hàng
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, Bootstrap, Jquery, PHP, WordPress</div>
+                    <a href="https://ptcnvn.com/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="proj-card reveal">
+                    <div class="proj-title">Little Sam</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Website thương hiệu và bán hàng trực tuyến dành cho thời trang trẻ em, được xây dựng để giới thiệu sản phẩm, bộ sưu tập theo mùa, câu chuyện thương hiệu và hỗ trợ trải nghiệm mua sắm cho phụ huynh."
+                            data-en="A brand and e-commerce website for children’s fashion, developed to showcase products, seasonal collections, brand storytelling, and a parent-friendly shopping experience.">
+                            Website thương hiệu và bán hàng trực tuyến dành cho thời trang trẻ em, được xây dựng để giới
+                            thiệu sản phẩm, bộ sưu tập theo mùa, câu chuyện thương hiệu và hỗ trợ trải nghiệm mua sắm
+                            cho phụ huynh.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng"
+                            data-en="- Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">
+                            - Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo
+                            yêu cầu phía khách hàng
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, Bootstrap, Jquery, PHP, WordPress</div>
+                    <a href="https://littlesam.com.vn/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="proj-card reveal">
+                    <div class="proj-title">Backcom</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Website / nền tảng tài chính được xây dựng nhằm hỗ trợ trader tối ưu chi phí giao dịch thông qua cơ chế hoàn phí trên các sàn Crypto và Forex, đồng thời cung cấp thông tin sàn, rebate rate và trải nghiệm quản lý hoàn phí trực tuyến."
+                            data-en="A fintech-oriented platform designed to help traders reduce trading costs through cashback and rebate programs across Crypto and Forex exchanges, while also providing exchange information, rebate details, and online cashback management features.">
+                            Website / nền tảng tài chính được xây dựng nhằm hỗ trợ trader tối ưu chi phí giao dịch thông
+                            qua cơ chế hoàn phí trên các sàn Crypto và Forex, đồng thời cung cấp thông tin sàn, rebate
+                            rate và trải nghiệm quản lý hoàn phí trực tuyến.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng"
+                            data-en="- Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">
+                            - Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo
+                            yêu cầu phía khách hàng
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, Bootstrap, Jquery, PHP, WordPress</div>
+                    <a href="https://backcom.ai/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="proj-card reveal">
+                    <div class="proj-title">Everjoy</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Website thương hiệu và bán hàng trực tuyến được xây dựng nhằm giới thiệu các sản phẩm chăm sóc sức khỏe và thư giãn tại nhà, kết hợp giữa trưng bày sản phẩm, câu chuyện thương hiệu, trải nghiệm mua sắm và dịch vụ hỗ trợ sau bán hàng."
+                            data-en="A brand and e-commerce website developed to showcase home wellness and relaxation products, combining product presentation, brand storytelling, online shopping experience, and post-purchase support services.">
+                            Website thương hiệu và bán hàng trực tuyến được xây dựng nhằm giới thiệu các sản phẩm chăm
+                            sóc sức khỏe và thư giãn tại nhà, kết hợp giữa trưng bày sản phẩm, câu chuyện thương hiệu,
+                            trải nghiệm mua sắm và dịch vụ hỗ trợ sau bán hàng.
+                        </p>
+                        <p class="t"
+                            data-vi="- Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng"
+                            data-en="- Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">
+                            - Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo
+                            yêu cầu phía khách hàng
+                        </p>
+                    </div>
+                    <div class="proj-stack">HTML, CSS, JavaScript, Bootstrap, Jquery, PHP, WordPress</div>
+                    <a href="https://everjoy.co.kr/" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem dự án" data-en="View project">Xem dự án</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="section-label"><span class="t" data-vi="Học vấn" data-en="Education">Học vấn</span></div>
+            <div class="edu-list mt-4">
+                <div class="edu-item reveal">
+                    <div class="row g-4">
+                        <div class="col-auto" style="min-width:160px">
+                            <div class="edu-year">2018 — 2022</div>
+                        </div>
+                        <div class="col">
+                            <div class="edu-degree"><span class="t" data-vi="Chuyên ngành Công nghệ Thông tin"
+                                    data-en="Information Technology Major">Chuyên ngành Công nghệ Thông tin</span></div>
+                            <div class="edu-school"><span class="t"
+                                    data-vi="Trường Đại học Tài nguyên và Môi trường Hà Nội"
+                                    data-en="Hanoi University of Natural Resource and Environment">Trường Đại học Tài
+                                    nguyên và Môi trường Hà Nội</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-item reveal">
+                    <div class="row g-4">
+                        <div class="col-auto" style="min-width:160px">
+                            <div class="edu-year">2021</div>
+                        </div>
+                        <div class="col">
+                            <div class="edu-degree"><span class="t" data-vi="Khóa học ngắn hạn Fullstack Developer"
+                                    data-en="Short-term Fullstack Developer Course">Khóa học ngắn hạn Fullstack
+                                    Developer</span></div>
+                            <div class="edu-school">Bach khoa Aptech · <span class="t" data-vi="Hà Nội"
+                                    data-en="Hanoi">Hà Nội</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-label mt-5">
+                <span class="t" data-vi="Chứng chỉ" data-en="Certifications">Chứng chỉ</span>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <div class="cert-name">Fullstack Developer</div>
+                    <div class="cert-org">Bach Khoa Aptech</div>
+                    <div class="cert-year">2021</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-label"><span class="t" data-vi="Liên hệ" data-en="Contact">Liên hệ</span></div>
+            <div class="row g-5 mt-1">
+                <div class="col-md-6">
+                    <div class="contact-big reveal"><span class="t" data-vi="Hãy cùng nhau tạo ra điều tuyệt vời."
+                            data-en="Let's build something great together.">Hãy cùng nhau<br>tạo ra điều<br><em>tuyệt
+                                vời.</em></span>
+                    </div>
+                    <p class="contact-sub reveal"><span class="t"
+                            data-vi="Tôi luôn sẵn sàng đón nhận các cơ hội mới và cộng tác thú vị. Hãy liên hệ tôi nếu bạn có dự án nào cần hợp tác hay có 1 ý tưởng về 1 trang web cho riêng mình !"
+                            data-en="I'm always open to new opportunities and exciting collaborations. Please contact me if you have a project you'd like to work on or an idea for your own website!">Tôi
+                            luôn sẵn sàng đón nhận các cơ hội mới và cộng tác thú vị. Hãy liên hệ tôi nếu bạn có dự án
+                            nào cần hợp tác hay có 1 ý tưởng về 1 trang web cho riêng mình !</span></p>
+                    <a href="mailto:vubinh120720@gmail.com" class="contact-email reveal">vubinh120720@gmail.com →</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-list reveal">
+                        <div class="contact-row">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.22 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.55 5.55l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:0813626639">+84 813 626 639</a>
+                            </div>
+                        </div>
+                        <div class="contact-row">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:vubinh120720@gmail.com">vubinh120720@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div><strong>Location</strong><span class="t" data-vi="Hà Nội, Việt Nam"
+                                    data-en="Hanoi, Vietnam">Hà Nội,
+                                    Việt Nam</span></div>
+                        </div>
+                        <div class="contact-row">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                                <path d="M9 18c-4.51 2-5-2-7-2" />
+                            </svg>
+                            <div>
+                                <strong>GitHub</strong>
+                                <a href="https://github.com/vubinh127" target="_blank">github.com/vubinh127</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-footer">
+            © 2026 Vũ Lê Bình · Front-End Developer · <span class="t" data-vi="Hà Nội, Việt Nam"
+                data-en="Hanoi, Vietnam">Hà
+                Nội, Việt Nam</span>
+        </div>
+
+    </main>
+
+    <button id="dark-toggle" aria-label="Toggle dark mode"></button>
+
+    <!-- ── Bootstrap JS ── -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" defer></script>
+
+    <script>
+        $(function () {
+            $('#menu-toggle').on('click', function () {
+                $('nav').slideToggle(200);
+            });
+
+            $('nav a').on('click', function () {
+                if ($(window).width() <= 991) {
+                    $('nav').slideUp(200);
+                }
+            });
+
+
+            let lang = 'vi';
+
+            const sectionLabels = {
+                vi: { home: 'HỒ SƠ CÁ NHÂN', about: 'GIỚI THIỆU', work: 'KINH NGHIỆM', portfolio: 'PORTFOLIO', education: 'HỌC VẤN', contact: 'LIÊN HỆ' },
+                en: { home: 'MY PROFILE', about: 'ABOUT ME', work: 'WORK PROFILE', portfolio: 'PORTFOLIO', education: 'EDUCATION', contact: 'CONTACT' }
+            };
+
+            function applyLang(newLang) {
+                lang = newLang;
+                $('html').attr('lang', lang);
+                $('.t').each(function () {
+                    const text = $(this).data(lang);
+                    if (text) $(this).text(text);
+                });
+                $('.btn-lang span').removeClass('lang-active');
+                $(`.btn-lang span[data-lang="${lang}"]`).addClass('lang-active');
+                const currentId = $('section[id].in-view').attr('id') || 'home';
+                $('#bc-section').text(sectionLabels[lang][currentId] || currentId.toUpperCase());
+                $('.pdf-label').text(lang === 'vi' ? 'Xuất PDF' : 'Export PDF');
+            }
+
+            $('#lang-toggle span').on('click', function () {
+                const selected = $(this).data('lang');
+                if (selected !== lang) applyLang(selected);
+            });
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        $('section[id]').removeClass('in-view');
+                        $(entry.target).addClass('in-view');
+                        $('nav a').removeClass('active');
+                        $(`nav a[href="#${id}"]`).addClass('active');
+                        $('#bc-section').text(sectionLabels[lang][id] || id.toUpperCase());
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            $('section[id]').each(function () { navObserver.observe(this); });
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        $(entry.target).addClass('visible');
+                        $(entry.target).find('.skill-fill[data-w]').each(function () {
+                            $(this).css('width', $(this).data('w') + '%');
+                        });
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            $('.reveal').each(function () { revealObserver.observe(this); });
+
+            const darkBtn = $('#dark-toggle');
+            const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>`;
+            const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+
+            function applyDark(isDark) {
+                if (isDark) {
+                    $('body').addClass('dark');
+                    darkBtn.html(sunIcon + '<span class="toggle-label">Light Mode</span>');
+                } else {
+                    $('body').removeClass('dark');
+                    darkBtn.html(moonIcon + '<span class="toggle-label">Dark Mode</span>');
+                }
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            }
+
+            const savedTheme = localStorage.getItem('theme');
+            applyDark(savedTheme === 'dark');
+
+            darkBtn.on('click', function () {
+                applyDark(!$('body').hasClass('dark'));
+            });
+
+        });
+    </script>
+</body>
+
+</html>
