@@ -111,4 +111,4 @@ Website được viết hoàn toàn bằng **HTML + CSS + JavaScript** thuần, 
 
 ## 📄 License
 
-© 2026 Vũ Lê Bình · All rights reserved.
+Vũ Lê Bình · All rights reserved.
