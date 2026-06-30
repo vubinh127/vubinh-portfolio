@@ -1,81 +1,84 @@
 # Vũ Lê Bình · Front-End Developer
 
-> Personal CV & Portfolio Website — [vubinh.id.vn](https://vubinh.id.vn/)
+> Personal CV & Portfolio Website — https://vubinh.id.vn/
 
 ![Preview](https://github.com/vubinh127.png)
 
 ---
 
-## 📌 Giới thiệu
+## 📌 About
 
-Đây là Portfolio cá nhân của **Vũ Lê Bình** — một lập trình viên Front-End với hơn **4 năm kinh nghiệm** xây dựng giao diện web đẹp, hiệu năng cao và thân thiện người dùng.
+This is the personal portfolio of **Vũ Lê Bình**, a Front-End Developer with over **4 years of experience** building modern, responsive, and high-performance web applications with a strong focus on user experience.
 
-Website được viết hoàn toàn bằng **HTML + CSS + JavaScript** thuần, không dùng framework phía client, tích hợp **Bootstrap 5** và **jQuery** qua CDN.
+The website is built entirely with **HTML, CSS, and Vanilla JavaScript**, without using any front-end frameworks. It also integrates **Bootstrap 5** and **jQuery** via CDN.
 
 ---
 
-## 🛠️ Công nghệ sử dụng
+## 🛠️ Tech Stack
 
-| Công nghệ | Mục đích |
+| Technology | Purpose |
 |---|---|
-| HTML5 | Cấu trúc trang |
-| Vanilla CSS + CSS Variables | Styling, Dark mode, Responsive |
-| JavaScript (ES6+) + jQuery | Logic, Animation, Language toggle |
-| Bootstrap 5 | Grid layout, Utilities |
+| HTML5 | Page structure |
+| Vanilla CSS + CSS Variables | Styling, Dark Mode, Responsive Design |
+| JavaScript (ES6+) + jQuery | Logic, Animations, Language Toggle |
+| Bootstrap 5 | Grid System & Utilities |
 | Google Fonts (Cormorant Garamond, Roboto) | Typography |
-| Intersection Observer API | Scroll-based animation & active nav |
+| Intersection Observer API | Scroll Animations & Active Navigation |
 
 ---
 
-## 📂 Các phần (Sections)
+## 📂 Website Sections
 
-| Section | Nội dung |
+| Section | Description |
 |---|---|
-| **Home / Hồ sơ cá nhân** | Ảnh đại diện, tên, chức danh, thông tin cơ bản |
-| **About / Giới thiệu** | Mô tả bản thân, thống kê (4+ năm, 30+ dự án), kỹ năng (skill bars) |
-| **Work Profile / Kinh nghiệm** | Lịch sử làm việc tại Newwave Solutions, Hưng Hà Pay, Freelance |
-| **Portfolio** | Các dự án đã thực hiện tại công ty và freelance |
-| **Education / Học vấn** | Đại học Tài nguyên & Môi trường HN, Bach Khoa Aptech |
-| **Contact / Liên hệ** | Email, SĐT, GitHub, địa chỉ |
+| **Home** | Profile photo, name, job title, and basic information |
+| **About** | Personal introduction, statistics (4+ years, 30+ projects), skill bars |
+| **Work Experience** | Career history at Newwave Solutions, Hung Ha Pay, and Freelance |
+| **Portfolio** | Selected company and freelance projects |
+| **Education** | Hanoi University of Natural Resources and Environment, Bach Khoa Aptech |
+| **Contact** | Email, phone number, GitHub, and location |
 
 ---
 
-## 💼 Kinh nghiệm làm việc
+## 💼 Work Experience
 
-### Newwave Solutions JSC *(06/2022 – Nay · Full-time)*
-- Xây dựng giao diện front-end (HTML, CSS, JavaScript)
-- Phát triển website bằng **Drupal** và **WordPress**
-- Thiết kế UI/UX theo bản design từ Figma / Adobe XD
-- Phối hợp team đảm bảo tiến độ và chất lượng dự án
+### Newwave Solutions JSC *(Jun 2022 – Present · Full-time)*
 
-### Hưng Hà Pay JSC *(12/2021 – 03/2022 · Full-time)*
-- Xây dựng website tuyển dụng (CodeIgniter 3)
-- Phát triển tính năng, sửa lỗi, tối ưu hiệu suất
+- Develop front-end interfaces using HTML, CSS, and JavaScript
+- Build websites with **Drupal** and **WordPress**
+- Implement UI/UX designs from Figma and Adobe XD
+- Collaborate with the development team to ensure project quality and timely delivery
 
-### Freelancer *(2022 – Nay · Part-time)*
-- Thiết kế và phát triển website WordPress theo yêu cầu khách hàng
+### Hung Ha Pay JSC *(Dec 2021 – Mar 2022 · Full-time)*
+
+- Developed a recruitment platform using **CodeIgniter 3**
+- Implemented new features, fixed bugs, and optimized performance
+
+### Freelance *(2022 – Present · Part-time)*
+
+- Design and develop custom WordPress websites for clients
 
 ---
 
-## 🚀 Dự án nổi bật
+## 🚀 Featured Projects
 
-| Dự án | Công ty | Stack |
+| Project | Company | Tech Stack |
 |---|---|---|
-| [Vieclam theo gio](https://vieclamtheogio.vieclam123.vn/) | Hưng Hà Pay | HTML, CSS, JS, PHP (CI3) |
-| [Up-t.jp](https://up-t.jp/) / [Up-t.net](https://up-t.net/) | Newwave | HTML, CSS, JS, jQuery, PHP |
-| [Nakasha Museums](https://www.osaka-art-museum.jp/) | Newwave | HTML, CSS, JS, Bootstrap, Drupal |
-| [Alpine Australia](https://www.alpine.com.au/) | Newwave | HTML, CSS, JS, Bootstrap, WordPress |
-| [Welaunchers](https://welaunchers.com/) | Newwave | HTML, CSS, Vue.js, Tailwind CSS |
-| [UFO Class](https://ufoclass.com/) | Freelance | HTML, CSS, JS, Bootstrap, WordPress |
-| [Little Sam](https://littlesam.com.vn/) | Freelance | HTML, CSS, JS, Bootstrap, WordPress |
-| [Backcom](https://backcom.ai/) | Freelance | HTML, CSS, JS, Bootstrap, WordPress |
-| [Everjoy](https://everjoy.co.kr/) | Freelance | HTML, CSS, JS, Bootstrap, WordPress |
+| https://vieclamtheogio.vieclam123.vn/ | Hung Ha Pay | HTML, CSS, JavaScript, PHP (CodeIgniter 3) |
+| https://up-t.jp/ / https://up-t.net/ | Newwave | HTML, CSS, JavaScript, jQuery, PHP |
+| https://www.osaka-art-museum.jp/ | Newwave | HTML, CSS, JavaScript, Bootstrap, Drupal |
+| https://www.alpine.com.au/ | Newwave | HTML, CSS, JavaScript, Bootstrap, WordPress |
+| https://welaunchers.com/ | Newwave | HTML, CSS, Vue.js, Tailwind CSS |
+| https://ufoclass.com/ | Freelance | HTML, CSS, JavaScript, Bootstrap, WordPress |
+| https://littlesam.com.vn/ | Freelance | HTML, CSS, JavaScript, Bootstrap, WordPress |
+| https://backcom.ai/ | Freelance | HTML, CSS, JavaScript, Bootstrap, WordPress |
+| https://everjoy.co.kr/ | Freelance | HTML, CSS, JavaScript, Bootstrap, WordPress |
 
 ---
 
-## 🎯 Kỹ năng
+## 🎯 Skills
 
-| Kỹ năng | Mức độ |
+| Skill | Proficiency |
 |---|---|
 | HTML / CSS / SASS | ⭐⭐⭐⭐⭐ 95% |
 | Tailwind CSS / Bootstrap | ⭐⭐⭐⭐⭐ 92% |
@@ -89,26 +92,28 @@ Website được viết hoàn toàn bằng **HTML + CSS + JavaScript** thuần, 
 
 ---
 
-## 🎓 Học vấn
+## 🎓 Education
 
-- **2018 – 2022** · Cử nhân Công nghệ Thông tin — *Đại học Tài nguyên và Môi trường Hà Nội*
-- **2021** · Chứng chỉ Fullstack Developer — *Bach Khoa Aptech, Hà Nội*
+- **2018 – 2022** — Bachelor's Degree in Information Technology  
+  *Hanoi University of Natural Resources and Environment*
+
+- **2021** — Fullstack Developer Certificate  
+  *Bach Khoa Aptech, Hanoi*
 
 ---
 
-## 📬 Liên hệ
+## 📬 Contact
 
 | | |
 |---|---|
-| 📧 Email | [vubinh120720@gmail.com](mailto:vubinh120720@gmail.com) |
-| 📞 Phone | [+84 813 626 639](tel:0813626639) |
-| 🐙 GitHub | [github.com/vubinh127](https://github.com/vubinh127) |
-| 🌐 Website | [vubinh.id.vn](https://vubinh.id.vn/) |
-| 📍 Location | Hà Nội, Việt Nam |
+| 📧 Email | vubinh120720@gmail.com |
+| 📞 Phone | +84 813 626 639 |
+| 🐙 GitHub | https://github.com/vubinh127 |
+| 🌐 Website | https://vubinh.id.vn/ |
+| 📍 Location | Hanoi, Vietnam |
 
 ---
 
-
 ## 📄 License
 
-Vũ Lê Bình · All rights reserved.
+© Vũ Lê Bình. All Rights Reserved.
