@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -40,11 +40,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7Q3TVV1NP"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-Q7Q3TVV1NP');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q7Q3TVV1NP');
     </script>
 
     <!-- ── JSON-LD Structured Data (Google Search Name + Logo) ── -->
@@ -128,14 +128,14 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
+            overflow-x: clip;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             background: var(--bg);
             color: var(--text);
-            overflow-x: hidden;
+            overflow-x: clip;
         }
 
         * {
@@ -303,27 +303,84 @@
             position: sticky;
             top: 0;
             background: rgba(249, 248, 246, 0.92);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
-            padding: 15px 64px;
+            padding: 0 64px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            gap: 12px;
+            z-index: 10;
+            height: 44px;
+        }
+
+        body.dark .breadcrumb-bar {
+            background: rgba(21, 21, 20, 0.92);
+        }
+
+        .breadcrumb-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 10px;
             letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--black);
-            z-index: 10;
         }
 
-        .breadcrumb-bar span {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .breadcrumb-bar svg {
+        .breadcrumb-left svg {
             width: 9px;
             height: 9px;
+            opacity: 0.5;
+        }
+
+        .breadcrumb-left .bc-home {
+            opacity: 0.5;
+        }
+
+        .breadcrumb-left .bc-current {
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .breadcrumb-left .bc-current svg {
+            width: 11px;
+            height: 11px;
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        /* Scroll progress bar */
+        .bc-progress-wrap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--border);
+        }
+
+        .bc-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--accent);
+            transition: width 0.1s linear;
+        }
+
+        /* Scroll percent badge */
+        .bc-scroll-pct {
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            font-weight: 700;
+            opacity: 0.8;
+            min-width: 30px;
+            text-align: right;
         }
 
         section {
@@ -669,7 +726,7 @@
         .proj-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1px;
+            gap: 10px;
             margin: 20px 0 40px;
         }
 
@@ -936,6 +993,13 @@
             transform: none;
         }
 
+        @media (max-width: 1024px) {
+            .proj-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
         @media (max-width: 991px) {
             :root {
                 --sidebar-w: 100%;
@@ -943,13 +1007,18 @@
 
             .sidebar {
                 position: fixed;
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: auto;
+                height: 52px;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                padding: 10px 16px;
+                padding: 0 16px;
                 overflow: visible;
+                z-index: 1000;
+                background: var(--sidebar-bg);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             }
 
             .sidebar-avatar {
@@ -957,42 +1026,119 @@
                 padding: 0;
             }
 
-            .sidebar-name,
+            .avatar-ring {
+                width: 34px;
+                height: 34px;
+            }
+
+            .sidebar-name {
+                display: block;
+                font-size: 14px;
+                color: #fff;
+            }
+
             .sidebar-role {
                 display: none;
             }
 
-            .sidebar nav {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
+            .sidebar-menu-wrapper {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 280px;
+                max-width: 85vw;
+                height: 100vh;
                 background: var(--sidebar-bg);
-                padding: 0 0 10px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                z-index: 1001;
+                display: flex;
+                flex-direction: column;
+                padding: 60px 20px 30px;
+                transform: translateX(100%);
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+                overflow-y: auto;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
             }
 
-            .sidebar.show-nav nav {
+            body.menu-open .sidebar-menu-wrapper {
+                transform: translateX(0);
+            }
+
+            .sidebar nav {
                 display: flex;
+                flex-direction: column;
+                padding: 0;
+                background: transparent;
+                border: none;
+                width: 100%;
+            }
+
+            .sidebar nav a {
+                padding: 12px 14px;
+                font-size: 13px;
+                border-radius: 6px;
             }
 
             .sidebar-footer {
-                display: none;
+                display: flex !important;
+                flex-direction: column;
+                gap: 14px;
+                margin-top: auto;
+                padding: 20px 0 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            #sidebar-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(4px);
+                -webkit-backdrop-filter: blur(4px);
+                z-index: 1000;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+                touch-action: none;
+            }
+
+            body.menu-open #sidebar-overlay {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            #menu-toggle {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 22px;
+                padding: 6px 10px;
+                cursor: pointer;
+                z-index: 1002;
+                line-height: 1;
             }
 
             .main {
                 margin-left: 0;
-                margin-top: 70px;
+                margin-top: 52px;
             }
 
             .breadcrumb-bar {
-                padding: 12px 16px;
+                position: sticky;
+                top: 52px;
+                padding: 0 16px;
+                z-index: 99;
+                height: 40px;
             }
 
             section {
-                padding: 48px 16px;
+                padding: 40px 16px;
             }
 
             #home .d-flex {
@@ -1009,9 +1155,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .proj-grid {
-                grid-template-columns: 1fr;
-            }
 
             .cert-grid {
                 grid-template-columns: 1fr;
@@ -1030,15 +1173,27 @@
             }
         }
 
-        #menu-toggle {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 20px;
-        }
-
         @media (min-width: 992px) {
+            .sidebar-menu-wrapper {
+                display: flex !important;
+                flex-direction: column;
+                flex-grow: 1;
+                justify-content: space-between;
+                transform: none !important;
+                position: static;
+                width: auto;
+                height: auto;
+                background: transparent;
+                padding: 0;
+                box-shadow: none;
+                border: none;
+            }
+
             .sidebar nav {
+                display: flex !important;
+            }
+
+            .sidebar-footer {
                 display: flex !important;
             }
         }
@@ -1120,79 +1275,74 @@
             </div>
         </div>
 
-        <nav class="py-4">
-            <a href="#home" class="active">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>Home
-            </a>
-            <a href="#about">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="12" cy="8" r="5" />
-                    <path d="M20 21a8 8 0 1 0-16 0" />
-                </svg>About
-            </a>
-            <a href="#work">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <rect width="20" height="14" x="2" y="7" rx="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>Work Profile
-            </a>
-            <a href="#portfolio">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <rect width="7" height="7" x="3" y="3" rx="1" />
-                    <rect width="7" height="7" x="14" y="3" rx="1" />
-                    <rect width="7" height="7" x="14" y="14" rx="1" />
-                    <rect width="7" height="7" x="3" y="14" rx="1" />
-                </svg>Portfolio
-            </a>
-            <a href="#education">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                </svg>Education
-            </a>
-            <a href="#contact">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                </svg>Contact
-            </a>
-        </nav>
+        <div class="sidebar-menu-wrapper">
+            <nav class="py-4">
+                <a href="#home" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>Home
+                </a>
+                <a href="#about">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="5" />
+                        <path d="M20 21a8 8 0 1 0-16 0" />
+                    </svg>About
+                </a>
+                <a href="#work">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect width="20" height="14" x="2" y="7" rx="2" />
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                    </svg>Work Profile
+                </a>
+                <a href="#portfolio">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect width="7" height="7" x="3" y="3" rx="1" />
+                        <rect width="7" height="7" x="14" y="3" rx="1" />
+                        <rect width="7" height="7" x="14" y="14" rx="1" />
+                        <rect width="7" height="7" x="3" y="14" rx="1" />
+                    </svg>Portfolio
+                </a>
+                <a href="#education">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>Education
+                </a>
+                <a href="#contact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>Contact
+                </a>
+            </nav>
 
-        <div class="sidebar-footer d-flex flex-column gap-2">
-            <div class="social-row d-flex gap-3">
-                <a href="https://github.com/vubinh127" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                        <path d="M9 18c-4.51 2-5-2-7-2" />
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/vubinhh127" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                    </svg>
-                </a>
-                <!-- <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="20" height="20" x="2" y="2" rx="5" />
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                    </svg>
-                </a> -->
-            </div>
-            <div class="sidebar-contact">vubinh120720@gmail.com<br>0813626639</div>
-            <div class="btn-lang" id="lang-toggle">
-                <span data-lang="vi" class="lang-active">🇻🇳 VI</span>
-                <span data-lang="en">🇬🇧 EN</span>
+            <div class="sidebar-footer d-flex flex-column gap-2">
+                <div class="social-row d-flex gap-3">
+                    <a href="https://github.com/vubinh127" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                            <path d="M9 18c-4.51 2-5-2-7-2" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/vubinhh127" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="sidebar-contact">vubinh120720@gmail.com<br>0813626639</div>
+                <div class="btn-lang" id="lang-toggle">
+                    <span data-lang="vi" class="lang-active">🇻🇳 VI</span>
+                    <span data-lang="en">🇬🇧 EN</span>
+                </div>
             </div>
         </div>
 
@@ -1203,11 +1353,24 @@
     <main class="main" id="printable">
 
         <div class="breadcrumb-bar">
-            HOME
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6" />
-            </svg>
-            <span id="bc-section">HỒ SƠ CÁ NHÂN</span>
+            <div class="breadcrumb-left">
+                <span class="bc-home">HOME</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
+                <span class="bc-current">
+                    <svg id="bc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    <span id="bc-section">HỒ SƠ CÁ NHÂN</span>
+                </span>
+            </div>
+            <span class="bc-scroll-pct" id="bc-pct">0%</span>
+            <div class="bc-progress-wrap">
+                <div class="bc-progress-fill" id="bc-progress"></div>
+            </div>
         </div>
 
 
@@ -1389,6 +1552,24 @@
                             <div class="skill-fill" data-w="40"></div>
                         </div>
                     </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head">
+                            <span>Google Maps / Business Profile</span>
+                            <span class="skill-pct">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-row reveal">
+                        <div class="skill-head">
+                            <span>Google Ads / GA4</span>
+                            <span class="skill-pct">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-w="70"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1399,11 +1580,13 @@
                 </h3>
                 <p>
                     <span class="t"
-                        data-vi="Ngoài lập trình front-end, tôi còn yêu thích dựng phim và khám phá các trải nghiệm kỹ thuật số qua game và sản phẩm tương tác. Những sở thích này giúp tôi rèn luyện tư duy hình ảnh, sáng tạo hơn và nâng cao nhạy cảm về trải nghiệm người dùng."
-                        data-en="Besides front-end development, I also enjoy video editing and exploring digital experiences through games and interactive products. These interests help me improve my visual thinking, creativity, and user experience awareness.">
+                        data-vi="Ngoài lập trình front-end, tôi còn yêu thích dựng phim và khám phá các trải nghiệm kỹ thuật số qua game và sản phẩm tương tác. Tôi cũng ứng dụng các công cụ AI như ChatGPT, GitHub Copilot, Claude và Gemini để hỗ trợ nghiên cứu, phát triển tính năng, tối ưu mã nguồn, xử lý lỗi, tự động hóa tác vụ lặp lại và học nhanh công nghệ mới. Những sở thích và kỹ năng này giúp tôi rèn luyện tư duy hình ảnh, sáng tạo hơn và nâng cao nhạy cảm về trải nghiệm người dùng."
+                        data-en="Besides front-end development, I also enjoy video editing and exploring digital experiences through games and interactive products. I use AI tools such as ChatGPT, GitHub Copilot, Claude, and Gemini to support research, feature development, code optimization, debugging, task automation, and learning new technologies faster. These interests and skills help me improve my visual thinking, creativity, and user experience awareness.">
                         Ngoài lập trình front-end, tôi còn yêu thích dựng phim và khám phá các trải nghiệm kỹ thuật số
-                        qua game và sản phẩm tương tác. Những sở thích này giúp tôi rèn luyện tư duy hình ảnh, sáng tạo
-                        hơn và nâng cao nhạy cảm về trải nghiệm người dùng.
+                        qua game và sản phẩm tương tác. Tôi cũng ứng dụng các công cụ AI như ChatGPT, GitHub Copilot,
+                        Claude và Gemini để hỗ trợ nghiên cứu, phát triển tính năng, tối ưu mã nguồn, xử lý lỗi, tự động
+                        hóa tác vụ lặp lại và học nhanh công nghệ mới. Những sở thích và kỹ năng này giúp tôi rèn luyện
+                        tư duy hình ảnh, sáng tạo hơn và nâng cao nhạy cảm về trải nghiệm người dùng.
                     </span>
                 </p>
             </div>
@@ -1491,6 +1674,87 @@
             <div class="job reveal">
                 <div class="row g-4">
                     <div class="col col-auto" style="min-width:160px">
+                        <div class="job-date">2026 — <span class="t" data-vi="Hiện tại" data-en="Present">Hiện
+                                tại</span></div>
+                        <div class="job-badge">Freelance</div>
+                    </div>
+
+                    <div class="col col-auto">
+                        <div class="job-title">
+                            Google Maps &amp; Google Ads
+                        </div>
+
+                        <div class="job-company">
+                            Digital Marketing · Freelance
+                        </div>
+
+                        <ul class="job-desc-list">
+                            <li>
+                                <span class="t"
+                                    data-vi="Tạo và thiết lập địa điểm doanh nghiệp trên Google Maps / Google Business Profile."
+                                    data-en="Created and configured business locations on Google Maps / Google Business Profile.">
+                                    Tạo và thiết lập địa điểm doanh nghiệp trên Google Maps / Google Business Profile.
+                                </span>
+                            </li>
+
+                            <li>
+                                <span class="t"
+                                    data-vi="Thiết lập và tối ưu thông tin doanh nghiệp, danh mục, địa chỉ, số điện thoại, website, hình ảnh và các thông tin liên quan."
+                                    data-en="Configured and optimized business information, categories, addresses, phone numbers, websites, images, and related information.">
+                                    Thiết lập và tối ưu thông tin doanh nghiệp, danh mục, địa chỉ, số điện thoại,
+                                    website, hình ảnh và các thông tin liên quan.
+                                </span>
+                            </li>
+
+                            <li>
+                                <span class="t"
+                                    data-vi="Triển khai và quản lý quảng cáo Google Ads, theo dõi ngân sách, lượt hiển thị, lượt nhấp và hiệu quả chiến dịch."
+                                    data-en="Set up and managed Google Ads campaigns, monitoring budgets, impressions, clicks, and campaign performance.">
+                                    Triển khai và quản lý quảng cáo Google Ads, theo dõi ngân sách, lượt hiển thị, lượt
+                                    nhấp và hiệu quả chiến dịch.
+                                </span>
+                            </li>
+
+                            <li>
+                                <span class="t"
+                                    data-vi="Thực hiện cho 3 địa điểm doanh nghiệp và kết hợp Google Maps, website và quảng cáo để tăng khả năng tiếp cận khách hàng."
+                                    data-en="Implemented Google Maps and advertising solutions for 3 business locations, connecting Google Maps, websites, and advertising campaigns to improve customer reach.">
+                                    Thực hiện cho 3 địa điểm doanh nghiệp và kết hợp Google Maps, website và quảng cáo
+                                    để tăng khả năng tiếp cận khách hàng.
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="job-tag">Google Maps</span>
+                            <span class="job-tag">Google Business Profile</span>
+                            <span class="job-tag">Google Ads</span>
+                            <span class="job-tag">Local SEO</span>
+                            <span class="job-tag">GA4</span>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2 mt-3">
+                            <a href="https://maps.app.goo.gl/PFNVKy1QgvzFDBdn9" target="_blank"
+                                rel="noopener noreferrer" class="job-tag text-decoration-none">
+                                Quiin Nail ↗
+                            </a>
+
+                            <a href="https://maps.app.goo.gl/gJL6NpFFn4cxoMSt8" target="_blank"
+                                rel="noopener noreferrer" class="job-tag text-decoration-none">
+                                Dưỡng Tâm An ↗
+                            </a>
+
+                            <a href="https://maps.app.goo.gl/6idLqy35ZPBUnbU48" target="_blank"
+                                rel="noopener noreferrer" class="job-tag text-decoration-none">
+                                Thân Dưỡng Cổ Vai Gáy ↗
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="job reveal">
+                <div class="row g-4">
+                    <div class="col col-auto" style="min-width:160px">
                         <div class="job-date">6/12/2021 — 24/3/2022</div>
                         <div class="job-badge">Full-time</div>
                     </div>
@@ -1524,7 +1788,6 @@
                     </div>
                 </div>
             </div>
-            </div>
         </section>
 
 
@@ -1548,8 +1811,8 @@
                             part-time, thời vụ và linh hoạt.
                         </p>
                         <p class="t"
-                            data-vi=" - Thiết kế site vieclamtheogio cho trang vieclam123, là website tìm việc làm theo giờ của trang vieclam123.vn.- Phát triển giao diện và các chức năng tương tác giữa ứng viên và nhà tuyển dụng, xây dựng website bằng CodeIgniter3."
-                            data-en="- Designing the vieclamtheogio site for vieclam123, a website for finding hourly jobs on vieclam123.vn.- Developing the interface and interactive functions between candidates and employers, building the website using CodeIgniter3.">
+                            data-vi="- Thiết kế site vieclamtheogio cho trang vieclam123, là website tìm việc làm theo giờ của trang vieclam123.vn.<br>- Phát triển giao diện và các chức năng tương tác giữa ứng viên và nhà tuyển dụng, xây dựng website bằng CodeIgniter3."
+                            data-en="- Designing the vieclamtheogio site for vieclam123, a website for finding hourly jobs on vieclam123.vn.<br>- Developing the interface and interactive functions between candidates and employers, building the website using CodeIgniter3.">
                             - Thiết kế site vieclamtheogio cho trang vieclam123, là website tìm việc làm theo giờ của
                             trang vieclam123.vn <br>
                             - Phát triển giao diện và các chức năng tương tác giữa ứng viên và nhà tuyển dụng, xây dựng
@@ -1820,6 +2083,91 @@
             </div>
 
             <div class="proj-company">
+                <span class="t" data-vi="Google Business Profile & Quảng cáo Local"
+                    data-en="Google Business Profile & Local Ads">Google Business Profile & Quảng cáo Local</span>
+            </div>
+
+            <div class="proj-grid">
+                <div class="proj-card reveal">
+                    <div class="proj-title">Quiin Nail</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Tiệm làm đẹp, dịch vụ chăm sóc móng &amp; mi chuyên nghiệp tại Hà Nội."
+                            data-en="Professional nail &amp; eyelash care beauty salon in Hanoi.">
+                            Tiệm làm đẹp, dịch vụ chăm sóc móng &amp; mi chuyên nghiệp tại Hà Nội.
+                        </p>
+                        <p class="t"
+                            data-vi="- Tạo, xác minh và tối ưu địa điểm doanh nghiệp trên Google Maps / Google Business Profile.<br>- Xây dựng nội dung chuẩn SEO Local, đăng tải thông tin &amp; hình ảnh dịch vụ.<br>- Triển khai quảng cáo Google Ads tiếp cận khách hàng tiềm năng khu vực xung quanh."
+                            data-en="- Created, verified, and optimized business location on Google Maps / Google Business Profile.<br>- Built Local SEO content, uploaded service information &amp; photos.<br>- Deployed Google Ads campaigns to target local prospective clients.">
+                            - Tạo, xác minh và tối ưu địa điểm doanh nghiệp trên Google Maps / Google Business
+                            Profile.<br>
+                            - Xây dựng nội dung chuẩn SEO Local, đăng tải thông tin &amp; hình ảnh dịch vụ.<br>
+                            - Triển khai quảng cáo Google Ads tiếp cận khách hàng tiềm năng khu vực xung quanh.
+                        </p>
+                    </div>
+                    <div class="proj-stack">Google Maps, Google Business Profile, Local SEO, Google Ads</div>
+                    <a href="https://maps.app.goo.gl/PFNVKy1QgvzFDBdn9" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem trên Google Maps" data-en="View on Google Maps">Xem trên Google
+                            Maps</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="proj-card reveal">
+                    <div class="proj-title">Dưỡng Tâm An</div>
+                    <div class="proj-desc">
+                        <p class="t desc" data-vi="Cơ sở dưỡng sinh, gội đầu dưỡng tâm và chăm sóc sức khỏe toàn diện."
+                            data-en="Comprehensive wellness, hair &amp; body relaxation center.">
+                            Cơ sở dưỡng sinh, gội đầu dưỡng tâm và chăm sóc sức khỏe toàn diện.
+                        </p>
+                        <p class="t"
+                            data-vi="- Khởi tạo và thiết lập địa điểm chuẩn Google Business Profile.<br>- Tối ưu hóa từ khóa Local SEO cho các dịch vụ dưỡng sinh &amp; trị liệu.<br>- Quản lý hình ảnh, thông tin và chạy quảng cáo Google Ads thu hút khách hàng local."
+                            data-en="- Set up and configured standard Google Business Profile location.<br>- Optimized Local SEO keywords for wellness &amp; therapy services.<br>- Managed images, details, and ran Google Ads to attract local customers.">
+                            - Khởi tạo và thiết lập địa điểm chuẩn Google Business Profile.<br>
+                            - Tối ưu hóa từ khóa Local SEO cho các dịch vụ dưỡng sinh &amp; trị liệu.<br>
+                            - Quản lý hình ảnh, thông tin và chạy quảng cáo Google Ads thu hút khách hàng local.
+                        </p>
+                    </div>
+                    <div class="proj-stack">Google Maps, Google Business Profile, Local SEO, Google Ads</div>
+                    <a href="https://maps.app.goo.gl/gJL6NpFFn4cxoMSt8" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem trên Google Maps" data-en="View on Google Maps">Xem trên Google
+                            Maps</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="proj-card reveal">
+                    <div class="proj-title">Thân Dưỡng Độc Quyền Cổ, Vai, Gáy</div>
+                    <div class="proj-desc">
+                        <p class="t desc"
+                            data-vi="Trung tâm trị liệu chuyên sâu các vấn đề cổ, vai, gáy và sức khỏe xương khớp."
+                            data-en="Specialized neck, shoulder, and spinal therapy health center.">
+                            Trung tâm trị liệu chuyên sâu các vấn đề cổ, vai, gáy và sức khỏe xương khớp.
+                        </p>
+                        <p class="t"
+                            data-vi="- Định vị địa điểm thương hiệu trên bản đồ Google Maps, gia tăng hiển thị tìm kiếm.<br>- Tối ưu hóa thông tin dịch vụ, giờ hoạt động và phản hồi đánh giá của khách hàng.<br>- Triển khai quảng cáo Google thu hút người dùng khu vực đăng ký trải nghiệm."
+                            data-en="- Pinned brand location on Google Maps to enhance search visibility.<br>- Optimized service information, opening hours, and customer review responses.<br>- Executed Google Ads to drive local users to register for therapy sessions.">
+                            - Định vị địa điểm thương hiệu trên bản đồ Google Maps, gia tăng hiển thị tìm kiếm.<br>
+                            - Tối ưu hóa thông tin dịch vụ, giờ hoạt động và phản hồi đánh giá của khách hàng.<br>
+                            - Triển khai quảng cáo Google thu hút người dùng khu vực đăng ký trải nghiệm.
+                        </p>
+                    </div>
+                    <div class="proj-stack">Google Maps, Google Business Profile, Local SEO, Google Ads</div>
+                    <a href="https://maps.app.goo.gl/6idLqy35ZPBUnbU48" target="_blank" class="proj-link">
+                        <span class="t" data-vi="Xem trên Google Maps" data-en="View on Google Maps">Xem trên Google
+                            Maps</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="proj-company">
                 Other
             </div>
 
@@ -2022,13 +2370,22 @@
 
     <script>
         $(function () {
-            $('#menu-toggle').on('click', function () {
-                $('nav').slideToggle(200);
+            $('#menu-toggle, #sidebar-overlay').on('click', function () {
+                $('body').toggleClass('menu-open');
+                const isOpen = $('body').hasClass('menu-open');
+                $('#menu-toggle').html(isOpen ? '✕' : '☰');
+            });
+
+            $('#sidebar-overlay').on('touchmove', function (e) {
+                if ($('body').hasClass('menu-open')) {
+                    e.preventDefault();
+                }
             });
 
             $('nav a').on('click', function () {
                 if ($(window).width() <= 991) {
-                    $('nav').slideUp(200);
+                    $('body').removeClass('menu-open');
+                    $('#menu-toggle').html('☰');
                 }
             });
 
@@ -2045,7 +2402,7 @@
                 $('html').attr('lang', lang);
                 $('.t').each(function () {
                     const text = $(this).data(lang);
-                    if (text) $(this).text(text);
+                    if (text) $(this).html(text);
                 });
                 $('.btn-lang span').removeClass('lang-active');
                 $(`.btn-lang span[data-lang="${lang}"]`).addClass('lang-active');
@@ -2059,6 +2416,22 @@
                 if (selected !== lang) applyLang(selected);
             });
 
+            const sectionIcons = {
+                home: `<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />`,
+                about: `<circle cx="12" cy="8" r="5" /><path d="M20 21a8 8 0 1 0-16 0" />`,
+                work: `<rect width="20" height="14" x="2" y="7" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />`,
+                portfolio: `<rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" />`,
+                education: `<path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" />`,
+                contact: `<rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />`
+            };
+
+            function updateBcIcon(id) {
+                const paths = sectionIcons[id];
+                if (paths) {
+                    $('#bc-icon').html(paths);
+                }
+            }
+
             const navObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -2068,11 +2441,22 @@
                         $('nav a').removeClass('active');
                         $(`nav a[href="#${id}"]`).addClass('active');
                         $('#bc-section').text(sectionLabels[lang][id] || id.toUpperCase());
+                        updateBcIcon(id);
                     }
                 });
             }, { threshold: 0.3 });
 
             $('section[id]').each(function () { navObserver.observe(this); });
+
+            function updateScrollProgress() {
+                const scrollTop = $(window).scrollTop();
+                const docHeight = $(document).height() - $(window).height();
+                const pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+                $('#bc-progress').css('width', pct + '%');
+                $('#bc-pct').text(pct + '%');
+            }
+            $(window).on('scroll', updateScrollProgress);
+            updateScrollProgress();
 
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
