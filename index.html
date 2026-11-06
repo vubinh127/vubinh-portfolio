@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vũ Lê Bình · Web Developer</title>
+
+    <meta name="description"
+        content="I am a Web Developer with over 4 years of experience building beautiful, high-performance, and user-friendly web interfaces. I believe I can bring your designs to life.">
+    <meta name="keywords"
+        content="Vũ Lê Bình, vubinh127, Web Developer, HTML, CSS, JavaScript, React, CV, Portfolio, SEO Website">
+    <meta name="author" content="Vũ Lê Bình">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vubinh.id.vn/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vubinh.id.vn/">
+    <meta property="og:title" content="Vũ Lê Bình · Web Developer">
+    <meta property="og:description"
+          content="I am a Web Developer with over 4 years of experience in web development, including frontend development, PHP, Drupal, and WordPress. Experienced in API integration, website performance optimization, SEO, and digital marketing.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/vubinh127">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Vũ Lê Bình – Web Developer">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Vũ Lê Bình – Web Developer">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content=" Vũ Lê Bình · Web Developer">
+    <meta name="twitter:description"
+        content="I am a Web developer with over 4 years of experience building beautiful, high-performance, and user-friendly web interfaces. I believe I can bring your designs to life.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/vubinh127">
+    <meta name="twitter:image:alt" content="Vũ Lê Bình – Web Developer">
+    <meta name="twitter:site" content="@vubinh127">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7Q3TVV1NP"></script>
+    <script src="js/analytics.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Vũ Lê Bình",
+      "alternateName": "Vũ Lê Bình – Web Developer",
+      "url": "https://vubinh.id.vn/",
+      "description": "Portfolio cá nhân của Vũ Lê Bình – Web Developer với 4+ năm kinh nghiệm.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Vũ Lê Bình",
+        "url": "https://vubinh.id.vn/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://avatars.githubusercontent.com/vubinh127",
+          "width": 400,
+          "height": 400
+        },
+        "sameAs": [
+          "https://github.com/vubinh127",
+          "https://www.linkedin.com/in/vubinh127"
+        ],
+        "jobTitle": "Web Developer",
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Vue.js", "Web Development"]
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://avatars.githubusercontent.com/vubinh127",
+        "width": 400,
+        "height": 400
+      }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="96x96" href="https://avatars.githubusercontent.com/vubinh127">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://avatars.githubusercontent.com/vubinh127">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://avatars.githubusercontent.com/vubinh127">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://avatars.githubusercontent.com/vubinh127">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/vubinh127">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/vubinh127">
+    <meta name="application-name" content="Vũ Lê Bình">
+
+    <script src="js/theme.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip" href="#portfolio"><span class="t" data-vi="Bỏ qua, tới dự án" data-en="Skip to projects">Bỏ qua, tới dự án</span></a>
+
+    <header class="bar">
+        <div class="container bar-inner">
+            <a href="#home" class="wordmark" aria-label="Vũ Lê Bình, về đầu trang">Vũ Lê Bình</a>
+            <nav class="nav" id="nav" aria-label="Main">
+                <a href="#portfolio"><span class="t" data-vi="Dự án" data-en="Projects">Dự án</span></a>
+                <a href="#work"><span class="t" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</span></a>
+                <a href="#about"><span class="t" data-vi="Giới thiệu" data-en="About">Giới thiệu</span></a>
+                <a href="#education"><span class="t" data-vi="Học vấn" data-en="Education">Học vấn</span></a>
+                <a href="#contact"><span class="t" data-vi="Liên hệ" data-en="Contact">Liên hệ</span></a>
+            </nav>
+            <div class="tools">
+                <div class="lang" id="lang-toggle" role="group" aria-label="Language">
+                    <button type="button" data-lang="vi" aria-pressed="true">VI</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button type="button" class="theme" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg aria-hidden="true" class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" /></svg>
+                    <svg aria-hidden="true" class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero proof">
+            <div class="container">
+                <div class="mark-wrap">
+                    <h1 class="mark" id="mark">Vũ Lê Bình</h1>
+                </div>
+
+                <div class="hero-foot">
+                    <div class="avatar open-to-work">
+                        <img src="https://avatars.githubusercontent.com/vubinh127" alt="Vũ Lê Bình" width="112" height="112" fetchpriority="high">
+                        <span class="otw-badge t" data-vi="Đang tìm việc" data-en="Open to Work">Đang tìm việc</span>
+                    </div>
+                    <p class="lead hero-lead"><span class="t" data-vi="Web Developer tại Hà Nội, đang tìm một môi trường để không ngừng học hỏi, phát triển và gắn bó lâu dài." data-en="Web Developer in Hanoi, looking for a place to keep learning, grow my craft and stay for the long run.">Web Developer tại Hà Nội, đang tìm một môi trường để không ngừng học hỏi, phát triển và gắn bó lâu dài.</span></p>
+                    <div class="hero-actions">
+                        <a href="mailto:vubinh120720@gmail.com" class="btn btn-primary"><span class="t" data-vi="Gửi email cho tôi" data-en="Email me">Gửi email cho tôi</span></a>
+                        <a href="./cv/CV-VU-LE-BINH.pdf" target="_blank" rel="noopener" class="btn"><span class="t" data-vi="Xem CV PDF" data-en="View CV PDF">Xem CV PDF</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="sec sec-index">
+            <div class="container">
+                <h2 class="sec-title">Portfolio</h2>
+
+                <ol class="tree" id="proj-grid">
+                    <li class="branch is-current" data-branch="gbp">
+                        <div class="branch-head"><span class="node" aria-hidden="true"></span><h3><span class="t" data-vi="Google Business Profile &amp; Quảng cáo Local" data-en="Google Business Profile &amp; Local Ads">Google Business Profile &amp; Quảng cáo Local</span></h3><p class="branch-when num"><span class="t" data-vi="2026 đến nay" data-en="2026 to present">2026 đến nay</span></p></div>
+                        <ol class="leaves">
+                            <li class="leaf">
+                            <details class="proj" data-group="gbp">
+                                <summary>
+                                    <h4>Quiin Nail</h4>
+                                    <span class="proj-stack">Google Maps, Google Business Profile, Local SEO, Google Ads</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Tiệm làm đẹp, dịch vụ chăm sóc móng &amp; mi chuyên nghiệp tại Hà Nội." data-en="Professional nail &amp; eyelash care beauty salon in Hanoi.">Tiệm làm đẹp, dịch vụ chăm sóc móng &amp; mi chuyên nghiệp tại Hà Nội.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Tạo, xác minh và tối ưu địa điểm doanh nghiệp trên Google Maps / Google Business Profile.<br>Xây dựng nội dung chuẩn SEO Local, đăng tải thông tin &amp; hình ảnh dịch vụ.<br>Triển khai quảng cáo Google Ads tiếp cận khách hàng tiềm năng khu vực xung quanh." data-en="Created, verified, and optimized business location on Google Maps / Google Business Profile.<br>Built Local SEO content, uploaded service information &amp; photos.<br>Deployed Google Ads campaigns to target local prospective clients.">Tạo, xác minh và tối ưu địa điểm doanh nghiệp trên Google Maps / Google Business Profile.<br>Xây dựng nội dung chuẩn SEO Local, đăng tải thông tin &amp; hình ảnh dịch vụ.<br>Triển khai quảng cáo Google Ads tiếp cận khách hàng tiềm năng khu vực xung quanh.</p>
+                                        <div class="links"><a href="https://quiin-nail.netlify.app/" target="_blank" rel="noopener">Quiin Nail</a><a href="https://maps.app.goo.gl/PFNVKy1QgvzFDBdn9" target="_blank" rel="noopener"><span class="t" data-vi="Xem trên Google Maps" data-en="View on Google Maps">Xem trên Google Maps</span></a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/quiin.webp" alt="Trang chủ quiin-nail.netlify.app" width="1200" height="750" loading="lazy">
+                                        <figcaption>Quiin Nail</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="gbp">
+                                <summary>
+                                    <h4>Dưỡng Tâm An</h4>
+                                    <span class="proj-stack">Google Maps, Google Business Profile, Local SEO, Google Ads</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Cơ sở dưỡng sinh, gội đầu dưỡng tâm và chăm sóc sức khỏe toàn diện." data-en="Comprehensive wellness, hair &amp; body relaxation center.">Cơ sở dưỡng sinh, gội đầu dưỡng tâm và chăm sóc sức khỏe toàn diện.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Khởi tạo và thiết lập địa điểm chuẩn Google Business Profile.<br>Tối ưu hóa từ khóa Local SEO cho các dịch vụ dưỡng sinh &amp; trị liệu.<br>Quản lý hình ảnh, thông tin và chạy quảng cáo Google Ads thu hút khách hàng local." data-en="Set up and configured standard Google Business Profile location.<br>Optimized Local SEO keywords for wellness &amp; therapy services.<br>Managed images, details, and ran Google Ads to attract local customers.">Khởi tạo và thiết lập địa điểm chuẩn Google Business Profile.<br>Tối ưu hóa từ khóa Local SEO cho các dịch vụ dưỡng sinh &amp; trị liệu.<br>Quản lý hình ảnh, thông tin và chạy quảng cáo Google Ads thu hút khách hàng local.</p>
+                                        <div class="links"><a href="https://maps.app.goo.gl/gJL6NpFFn4cxoMSt8" target="_blank" rel="noopener"><span class="t" data-vi="Xem trên Google Maps" data-en="View on Google Maps">Xem trên Google Maps</span></a></div>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="gbp">
+                                <summary>
+                                    <h4>Thân Dưỡng Độc Quyền Cổ, Vai, Gáy</h4>
+                                    <span class="proj-stack">Google Maps, Google Business Profile, Local SEO, Google Ads</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Chuỗi 4 cơ sở trị liệu chuyên sâu các vấn đề cổ, vai, gáy và sức khỏe xương khớp." data-en="A chain of 4 specialized neck, shoulder, and spinal therapy centers.">Chuỗi 4 cơ sở trị liệu chuyên sâu các vấn đề cổ, vai, gáy và sức khỏe xương khớp.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Tạo, xác minh và đồng bộ thông tin 4 cơ sở trên Google Maps / Google Business Profile, gia tăng hiển thị tìm kiếm cho toàn chuỗi.<br>Tối ưu hóa thông tin dịch vụ, giờ hoạt động và phản hồi đánh giá của khách hàng cho từng cơ sở.<br>Triển khai quảng cáo Google thu hút người dùng khu vực đăng ký trải nghiệm." data-en="Created, verified, and synchronized 4 branch locations on Google Maps / Google Business Profile, boosting search visibility for the whole chain.<br>Optimized service information, opening hours, and customer review responses for each branch.<br>Executed Google Ads to drive local users to register for therapy sessions.">Tạo, xác minh và đồng bộ thông tin 4 cơ sở trên Google Maps / Google Business Profile, gia tăng hiển thị tìm kiếm cho toàn chuỗi.<br>Tối ưu hóa thông tin dịch vụ, giờ hoạt động và phản hồi đánh giá của khách hàng cho từng cơ sở.<br>Triển khai quảng cáo Google thu hút người dùng khu vực đăng ký trải nghiệm.</p>
+                                        <div class="links">
+                                            <a href="https://share.google/x8iyt3MmftEuL8ArR" target="_blank" rel="noopener noreferrer"><span class="t" data-vi="Cơ sở" data-en="Branch">Cơ sở</span> 1</a>
+                                            <a href="https://share.google/Gw3ZYjXwME5GMr1cx" target="_blank" rel="noopener noreferrer"><span class="t" data-vi="Cơ sở" data-en="Branch">Cơ sở</span> 2</a>
+                                            <a href="https://share.google/6GuiTjbnKMt4uuRVd" target="_blank" rel="noopener noreferrer"><span class="t" data-vi="Cơ sở" data-en="Branch">Cơ sở</span> 3</a>
+                                            <a href="https://share.google/F18kJl6djM3AJtu56" target="_blank" rel="noopener noreferrer"><span class="t" data-vi="Cơ sở" data-en="Branch">Cơ sở</span> 4</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="branch is-current" data-branch="freelance">
+                        <div class="branch-head"><span class="node" aria-hidden="true"></span><h3>Freelance</h3><p class="branch-when num"><span class="t" data-vi="2022 đến nay" data-en="2022 to present">2022 đến nay</span></p></div>
+                        <ol class="leaves">
+                            <li class="leaf">
+                            <details class="proj" data-group="freelance">
+                                <summary>
+                                    <h4>UFO</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, Bootstrap, jQuery, PHP, WordPress</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Nền tảng giáo dục / website đào tạo ngoại ngữ trực tuyến, tập trung vào luyện thi và phát triển năng lực ngôn ngữ cho học viên thông qua các chương trình đào tạo IELTS, TOPIK và các chứng chỉ quốc tế." data-en="An educational website / learning platform focused on language training and exam preparation for certifications such as IELTS, TOPIK, and other international language programs.">Nền tảng giáo dục / website đào tạo ngoại ngữ trực tuyến, tập trung vào luyện thi và phát triển năng lực ngôn ngữ cho học viên thông qua các chương trình đào tạo IELTS, TOPIK và các chứng chỉ quốc tế.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng" data-en="Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">Thiết kế và xây dựng lại toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng</p>
+                                        <div class="links"><a href="https://ufoclass.com/" target="_blank" rel="noopener">ufoclass.com</a></div>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="freelance">
+                                <summary>
+                                    <h4>PTCNVN</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, Bootstrap, jQuery, PHP, WordPress</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Website doanh nghiệp được xây dựng nhằm giới thiệu năng lực, lĩnh vực hoạt động và định hướng phát triển của công ty trong các mảng xây dựng công trình khai thác mỏ, thương mại, dịch vụ và công nghệ cơ giới hóa hiện đại." data-en="A corporate website developed to showcase the company’s capabilities, business sectors, and development direction across mining construction, trade, services, and modern mechanized technology solutions.">Website doanh nghiệp được xây dựng nhằm giới thiệu năng lực, lĩnh vực hoạt động và định hướng phát triển của công ty trong các mảng xây dựng công trình khai thác mỏ, thương mại, dịch vụ và công nghệ cơ giới hóa hiện đại.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng" data-en="Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng</p>
+                                        <div class="links"><a href="https://ptcnvn.com/" target="_blank" rel="noopener">ptcnvn.com</a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/ptcnvn.webp" alt="Trang chủ ptcnvn.com" width="1200" height="750" loading="lazy">
+                                        <figcaption>ptcnvn.com</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="freelance">
+                                <summary>
+                                    <h4>Little Sam</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, Bootstrap, jQuery, PHP, WordPress</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Website thương hiệu và bán hàng trực tuyến dành cho thời trang trẻ em, được xây dựng để giới thiệu sản phẩm, bộ sưu tập theo mùa, câu chuyện thương hiệu và hỗ trợ trải nghiệm mua sắm cho phụ huynh." data-en="A brand and e-commerce website for children’s fashion, developed to showcase products, seasonal collections, brand storytelling, and a parent-friendly shopping experience.">Website thương hiệu và bán hàng trực tuyến dành cho thời trang trẻ em, được xây dựng để giới thiệu sản phẩm, bộ sưu tập theo mùa, câu chuyện thương hiệu và hỗ trợ trải nghiệm mua sắm cho phụ huynh.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng" data-en="Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng</p>
+                                        <div class="links"><a href="https://littlesam.com.vn/" target="_blank" rel="noopener">littlesam.com.vn</a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/littlesam.webp" alt="Trang chủ littlesam.com.vn" width="1200" height="750" loading="lazy">
+                                        <figcaption>littlesam.com.vn</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="freelance">
+                                <summary>
+                                    <h4>Backcom</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, Bootstrap, jQuery, PHP, WordPress</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Website / nền tảng tài chính được xây dựng nhằm hỗ trợ trader tối ưu chi phí giao dịch thông qua cơ chế hoàn phí trên các sàn Crypto và Forex, đồng thời cung cấp thông tin sàn, rebate rate và trải nghiệm quản lý hoàn phí trực tuyến." data-en="A fintech-oriented platform designed to help traders reduce trading costs through cashback and rebate programs across Crypto and Forex exchanges, while also providing exchange information, rebate details, and online cashback management features.">Website / nền tảng tài chính được xây dựng nhằm hỗ trợ trader tối ưu chi phí giao dịch thông qua cơ chế hoàn phí trên các sàn Crypto và Forex, đồng thời cung cấp thông tin sàn, rebate rate và trải nghiệm quản lý hoàn phí trực tuyến.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng" data-en="Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng</p>
+                                        <div class="links"><a href="https://backcom.ai/" target="_blank" rel="noopener">backcom.ai</a></div>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="freelance">
+                                <summary>
+                                    <h4>Everjoy</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, Bootstrap, jQuery, PHP, WordPress</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Website thương hiệu và bán hàng trực tuyến được xây dựng nhằm giới thiệu các sản phẩm chăm sóc sức khỏe và thư giãn tại nhà, kết hợp giữa trưng bày sản phẩm, câu chuyện thương hiệu, trải nghiệm mua sắm và dịch vụ hỗ trợ sau bán hàng." data-en="A brand and e-commerce website developed to showcase home wellness and relaxation products, combining product presentation, brand storytelling, online shopping experience, and post-purchase support services.">Website thương hiệu và bán hàng trực tuyến được xây dựng nhằm giới thiệu các sản phẩm chăm sóc sức khỏe và thư giãn tại nhà, kết hợp giữa trưng bày sản phẩm, câu chuyện thương hiệu, trải nghiệm mua sắm và dịch vụ hỗ trợ sau bán hàng.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng" data-en="Design and rebuild the entire interface based on the design, completing the functionalities according to the client's requirements.">Thiết kế và xây dựng toàn bộ giao diện dựa trên thiết kế, hoàn thành các chức năng theo yêu cầu phía khách hàng</p>
+                                        <div class="links"><a href="https://everjoy.co.kr/" target="_blank" rel="noopener">everjoy.co.kr</a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/everjoy.webp" alt="Trang chủ everjoy.co.kr" width="1200" height="750" loading="lazy">
+                                        <figcaption>everjoy.co.kr</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="branch" data-branch="newwave">
+                        <div class="branch-head"><span class="node" aria-hidden="true"></span><h3><span class="t" data-vi="Công ty cổ phần giải pháp Ngọn Sóng Mới" data-en="NEWWAVE SOLUTIONS JOINT STOCK COMPANY">Công ty cổ phần giải pháp Ngọn Sóng Mới</span></h3><p class="branch-when num"><span class="t" data-vi="06/2022 đến 11/2026" data-en="06/2022 to 11/2026">06/2022 đến 11/2026</span></p></div>
+                        <ol class="leaves">
+                            <li class="leaf">
+                            <details class="proj" data-group="newwave">
+                                <summary>
+                                    <h4>Up-t / Up-t English</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, jQuery, PHP</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="UP-T.jp là website thương mại điện tử cho phép người dùng thiết kế và đặt in sản phẩm custom như áo thun, phụ kiện và quà tặng cá nhân hóa." data-en="UP-T.jp is an e-commerce website that enables users to create and order custom-printed products such as T-shirts, accessories, and personalized goods.">UP-T.jp là website thương mại điện tử cho phép người dùng thiết kế và đặt in sản phẩm custom như áo thun, phụ kiện và quà tặng cá nhân hóa.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Sửa giao diện, phát triển thêm tính năng, hoàn thành các task được giao từ phía khách hàng, tối ưu hiệu suất cho website, kiểm tra phát hiện lỗi trong trải nghiệm người dùng để sửa chữa và báo cho các bộ phận liên quan." data-en="Modify the interface, develop additional features, complete assigned tasks from clients, and optimize the performance of the up-t.jp website.">Sửa giao diện, phát triển thêm tính năng, hoàn thành các task được giao từ phía khách hàng, tối ưu hiệu suất cho website, kiểm tra phát hiện lỗi trong trải nghiệm người dùng để sửa chữa và báo cho các bộ phận liên quan.</p>
+                                        <div class="links"><a href="https://up-t.jp/" target="_blank" rel="noopener">up-t.jp</a><a href="https://up-t.net/" target="_blank" rel="noopener">up-t.net (English)</a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/upt.webp" alt="Trang chủ up-t.jp" width="1200" height="750" loading="lazy">
+                                        <figcaption>up-t.jp</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="newwave">
+                                <summary>
+                                    <h4><span class="t" data-vi="Tổ hợp dự án Nakasha" data-en="Nakasha Project Collection">Tổ hợp dự án Nakasha</span></h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, jQuery, Bootstrap, PHP, Drupal</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Hệ thống / nhóm website thuộc lĩnh vực bảo tàng, văn hóa và lưu trữ số, hỗ trợ người dùng tra cứu, khám phá và tiếp cận các tài liệu, hiện vật, bộ sưu tập và nội dung triển lãm thông qua giao diện trực tuyến hiện đại và thân thiện." data-en="This system/group of websites, belonging to the field of museums, culture, and digital archives, supports users in searching, exploring, and accessing documents, artifacts, collections, and exhibition content through a modern and user-friendly online interface.">Hệ thống / nhóm website thuộc lĩnh vực bảo tàng, văn hóa và lưu trữ số, hỗ trợ người dùng tra cứu, khám phá và tiếp cận các tài liệu, hiện vật, bộ sưu tập và nội dung triển lãm thông qua giao diện trực tuyến hiện đại và thân thiện.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng website bảo tàng bằng Drupal CMS dựa trên bản thiết kế từ khách hàng, phát triển các tính năng tương tác, giữa người dùng và trang web." data-en="Design and build museum websites using Drupal CMS based on client blueprints, developing interactive features between users and the website.">Thiết kế và xây dựng website bảo tàng bằng Drupal CMS dựa trên bản thiết kế từ khách hàng, phát triển các tính năng tương tác, giữa người dùng và trang web.</p>
+                                        <div class="links"><a href="https://digital-sagamihara.jp/" target="_blank" rel="noopener">Sagamihara</a><a href="https://www.rekishi-archive.city.naha.okinawa.jp/" target="_blank" rel="noopener">Naha</a><a href="https://nagahama-rekihaku.jp/" target="_blank" rel="noopener">Nagahama</a><a href="https://www.osaka-art-museum.jp/" target="_blank" rel="noopener">Osaka</a></div>
+                                    </div>
+                                    <div class="case-shots shots-3">
+                                        <figure class="sheet crop"><img src="images/work/nagahama.webp" alt="Trang chủ nagahama-rekihaku.jp" width="1200" height="750" loading="lazy">
+                                <figcaption><a href="https://nagahama-rekihaku.jp/" target="_blank" rel="noopener">Nagahama</a> <span>nagahama-rekihaku.jp</span></figcaption></figure>
+                                        <figure class="sheet crop"><img src="images/work/naha.webp" alt="Trang chủ rekishi-archive.city.naha.okinawa.jp" width="1200" height="750" loading="lazy">
+                                <figcaption><a href="https://www.rekishi-archive.city.naha.okinawa.jp/" target="_blank" rel="noopener">Naha</a> <span>rekishi-archive.city.naha.okinawa.jp</span></figcaption></figure>
+                                        <figure class="sheet crop"><img src="images/work/sagamihara.webp" alt="Trang chủ digital-sagamihara.jp" width="1200" height="750" loading="lazy">
+                                <figcaption><a href="https://digital-sagamihara.jp/" target="_blank" rel="noopener">Sagamihara</a> <span>digital-sagamihara.jp</span></figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="newwave">
+                                <summary>
+                                    <h4>Alpine</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript, jQuery, Bootstrap, PHP, WordPress</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Alpine.com.au là website giới thiệu và kinh doanh các thiết bị âm thanh, giải trí và phụ kiện điện tử dành cho ô tô tại thị trường Australia." data-en="Alpine.com.au is an automotive electronics and in-car entertainment website focused on audio systems, infotainment products, and vehicle-specific upgrade solutions for the Australian market.">Alpine.com.au là website giới thiệu và kinh doanh các thiết bị âm thanh, giải trí và phụ kiện điện tử dành cho ô tô tại thị trường Australia.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng trang web theo design, tối ưu hiệu suất và trải nghiệm người dùng, đảm bảo trang web hoạt động mượt mà trên mọi thiết bị." data-en="Design and build websites, optimize performance and user experience, ensuring the website runs smoothly on all devices.">Thiết kế và xây dựng trang web theo design, tối ưu hiệu suất và trải nghiệm người dùng, đảm bảo trang web hoạt động mượt mà trên mọi thiết bị.</p>
+                                        <div class="links"><a href="https://www.alpine.com.au/" target="_blank" rel="noopener">alpine.com.au</a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/alpine.webp" alt="Trang chủ alpine.com.au" width="1200" height="750" loading="lazy">
+                                        <figcaption>alpine.com.au</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="newwave">
+                                <summary>
+                                    <h4>Welaunchers.com</h4>
+                                    <span class="proj-stack">HTML, CSS, VueJs, Tailwind CSS</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Website giới thiệu dịch vụ thiết kế và phát triển website dành cho doanh nghiệp." data-en="A business website focused on web design and development services.">Website giới thiệu dịch vụ thiết kế và phát triển website dành cho doanh nghiệp.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế và xây dựng giao diện, hoàn thành các chức năng theo yêu cầu phía khách hàng" data-en="Design and build user interfaces, complete features according to client requirements">Thiết kế và xây dựng giao diện, hoàn thành các chức năng theo yêu cầu phía khách hàng</p>
+                                        <div class="links"><a href="https://welaunchers.com/" target="_blank" rel="noopener">welaunchers.com</a></div>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="branch" data-branch="hungha">
+                        <div class="branch-head"><span class="node" aria-hidden="true"></span><h3><span class="t" data-vi="Công ty cổ phần thanh toán Hưng Hà" data-en="HUNG HA PAY JOINT STOCK COMPANY">Công ty cổ phần thanh toán Hưng Hà</span></h3><p class="branch-when num"><span class="t" data-vi="12/2021 đến 03/2022" data-en="12/2021 to 03/2022">12/2021 đến 03/2022</span></p></div>
+                        <ol class="leaves">
+                            <li class="leaf">
+                            <details class="proj" data-group="hungha">
+                                <summary>
+                                    <h4>Website Việc làm theo giờ</h4>
+                                    <span class="proj-stack">HTML/CSS, JavaScript (jQuery), PHP (CodeIgniter3)</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Nền tảng tuyển dụng việc làm theo giờ, hỗ trợ tìm kiếm và đăng tuyển các công việc part-time, thời vụ và linh hoạt." data-en="An hourly and part-time job platform that helps users search and apply for flexible employment opportunities.">Nền tảng tuyển dụng việc làm theo giờ, hỗ trợ tìm kiếm và đăng tuyển các công việc part-time, thời vụ và linh hoạt.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Thiết kế site vieclamtheogio cho trang vieclam123, là website tìm việc làm theo giờ của trang vieclam123.vn.<br>Phát triển giao diện và các chức năng tương tác giữa ứng viên và nhà tuyển dụng, xây dựng website bằng CodeIgniter3." data-en="Designing the vieclamtheogio site for vieclam123, a website for finding hourly jobs on vieclam123.vn.<br>Developing the interface and interactive functions between candidates and employers, building the website using CodeIgniter3.">Thiết kế site vieclamtheogio cho trang vieclam123, là website tìm việc làm theo giờ của trang vieclam123.vn.<br>Phát triển giao diện và các chức năng tương tác giữa ứng viên và nhà tuyển dụng, xây dựng website bằng CodeIgniter3.</p>
+                                        <div class="links"><a href="https://vieclamtheogio.vieclam123.vn/" target="_blank" rel="noopener">vieclamtheogio.vieclam123.vn</a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/vieclam.webp" alt="Trang chủ vieclamtheogio.vieclam123.vn" width="1200" height="750" loading="lazy">
+                                        <figcaption>vieclamtheogio.vieclam123.vn</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="branch" data-branch="other">
+                        <div class="branch-head"><span class="node" aria-hidden="true"></span><h3><span class="t" data-vi="Dự án cá nhân" data-en="Side projects">Dự án cá nhân</span></h3></div>
+                        <ol class="leaves">
+                            <li class="leaf">
+                            <details class="proj" data-group="other">
+                                <summary>
+                                    <h4>Base64 to Image Converter</h4>
+                                    <span class="proj-stack">HTML, CSS, JavaScript</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Công cụ trực tuyến hỗ trợ chuyển đổi dữ liệu Base64 thành hình ảnh, cho phép người dùng xem trước và tải ảnh về thiết bị một cách nhanh chóng." data-en="An online tool that converts Base64 data into images, allowing users to preview and download images quickly.">Công cụ trực tuyến hỗ trợ chuyển đổi dữ liệu Base64 thành hình ảnh, cho phép người dùng xem trước và tải ảnh về thiết bị một cách nhanh chóng.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Xây dựng giao diện và phát triển chức năng chuyển đổi Base64 sang hình ảnh bằng JavaScript, xử lý dữ liệu trực tiếp trên trình duyệt." data-en="Developed the user interface and implemented Base64-to-image conversion functionality using JavaScript, processing data directly in the browser.">Xây dựng giao diện và phát triển chức năng chuyển đổi Base64 sang hình ảnh bằng JavaScript, xử lý dữ liệu trực tiếp trên trình duyệt.</p>
+                                        <div class="links"><a href="https://base64imagesconverter.netlify.app/" target="_blank" rel="noopener"><span class="t" data-vi="Mở công cụ" data-en="Open the tool">Mở công cụ</span></a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/base64.webp" alt="Giao diện Base64 to Image Converter" width="1200" height="750" loading="lazy">
+                                        <figcaption>base64imagesconverter.netlify.app</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                            <li class="leaf">
+                            <details class="proj" data-group="other">
+                                <summary>
+                                    <h4>NASA EONET Tracker</h4>
+                                    <span class="proj-stack">ReactJS, JavaScript, CSS, API</span>
+                                    <svg aria-hidden="true" class="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                                </summary>
+                                <div class="case">
+                                    <div class="case-desc">
+                                        <p class="t" data-vi="Ứng dụng theo dõi các sự kiện thiên tai và hiện tượng tự nhiên trên toàn cầu dựa trên dữ liệu thời gian thực từ NASA EONET API." data-en="A web application that tracks natural disasters and natural events worldwide using real-time data from the NASA EONET API.">Ứng dụng theo dõi các sự kiện thiên tai và hiện tượng tự nhiên trên toàn cầu dựa trên dữ liệu thời gian thực từ NASA EONET API.</p>
+                                    </div>
+                                    <div class="case-role">
+                                        <p class="case-label t" data-vi="Vai trò của tôi" data-en="My role">Vai trò của tôi</p>
+                                        <p class="t" data-vi="Tích hợp NASA EONET API, hiển thị dữ liệu sự kiện trên bản đồ tương tác và xây dựng giao diện bằng ReactJS." data-en="Integrated the NASA EONET API, displayed event data on an interactive map, and built the interface using ReactJS.">Tích hợp NASA EONET API, hiển thị dữ liệu sự kiện trên bản đồ tương tác và xây dựng giao diện bằng ReactJS.</p>
+                                        <div class="links"><a href="https://nasa-eonet-tracker.netlify.app/" target="_blank" rel="noopener"><span class="t" data-vi="Mở ứng dụng" data-en="Open the app">Mở ứng dụng</span></a></div>
+                                    </div>
+                                    <div class="case-shots shots-1">
+                                        <figure class="sheet crop"><img src="images/work/nasa.webp" alt="Giao diện NASA EONET Tracker" width="1200" height="750" loading="lazy">
+                                        <figcaption>nasa-eonet-tracker.netlify.app</figcaption></figure>
+                                    </div>
+                                </div>
+                            </details>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="work" class="sec sec-work">
+            <div class="container work-grid">
+                <h2 class="sticky-head"><span class="t" data-vi="Kinh nghiệm làm việc" data-en="Work experience">Kinh nghiệm làm việc</span></h2>
+                <ol class="jobs">
+                    <li class="job">
+                        <p class="job-when num"><span class="t" data-vi="06/2022 đến 11/2026" data-en="06/2022 to 11/2026">06/2022 đến 11/2026</span><br><span class="muted">Full-time</span></p>
+                        <div>
+                            <h3>Front-End Developer</h3>
+                            <p class="job-co"><span class="t" data-vi="Công ty cổ phần giải pháp Ngọn Sóng Mới" data-en="NEWWAVE SOLUTIONS JOINT STOCK COMPANY">Công ty cổ phần giải pháp Ngọn Sóng Mới</span>, <span class="t" data-vi="Hà Nội" data-en="Hanoi">Hà Nội</span></p>
+                            <p class="job-stack">HTML/CSS, JavaScript, WordPress, Drupal, PHP, Figma/Latency/Psd/AdobeXD, MySQL</p>
+                            <details class="more">
+                                <summary><span class="t" data-vi="Chi tiết công việc" data-en="Responsibilities">Chi tiết công việc</span></summary>
+                                <ul>
+                                    <li><span class="t" data-vi="Xây dựng các thành phần hiển thị trực tiếp với người dùng" data-en="Building user-facing components and interfaces">Xây dựng các thành phần hiển thị trực tiếp với người dùng</span></li>
+                                    <li><span class="t" data-vi="Thiết kế và phát triển bố cục, giao diện trực quan và các yếu tố tương tác bằng HTML, CSS và JavaScript" data-en="Designing and developing layouts, visual interfaces, and interactive elements using HTML, CSS and JavaScript">Thiết kế và phát triển bố cục, giao diện trực quan và các yếu tố tương tác bằng HTML, CSS và JavaScript</span></li>
+                                    <li><span class="t" data-vi="Xây dựng website bằng Drupal, Wordpress" data-en="Building websites using Drupal, Wordpress">Xây dựng website bằng Drupal, Wordpress</span></li>
+                                    <li><span class="t" data-vi="Phối hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án" data-en="Collaborating with team members to ensure project quality and progress.">Phối hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án</span></li>
+                                </ul>
+                            </details>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="job-when num"><span class="t" data-vi="2022 đến nay" data-en="2022 to present">2022 đến nay</span><br><span class="muted">Part-time</span></p>
+                        <div>
+                            <h3>WordPress Developer</h3>
+                            <p class="job-co">Freelancer, Remote</p>
+                            <p class="job-stack">HTML/CSS, JavaScript, WordPress, Figma</p>
+                            <details class="more">
+                                <summary><span class="t" data-vi="Chi tiết công việc" data-en="Responsibilities">Chi tiết công việc</span></summary>
+                                <ul>
+                                    <li><span class="t" data-vi="Xây dựng các thành phần hiển thị trực tiếp với người dùng" data-en="Building user-facing components and interfaces">Xây dựng các thành phần hiển thị trực tiếp với người dùng</span></li>
+                                    <li><span class="t" data-vi="Thiết kế, xây dựng website, phát triển tính năng theo yêu cầu của khách hàng bằng Wordpress" data-en="Designing, building websites, and developing features according to client requirements using WordPress.">Thiết kế, xây dựng website, phát triển tính năng theo yêu cầu của khách hàng bằng Wordpress</span></li>
+                                </ul>
+                            </details>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="job-when num"><span class="t" data-vi="2026 đến nay" data-en="2026 to present">2026 đến nay</span><br><span class="muted">Freelance</span></p>
+                        <div>
+                            <h3>Google Maps &amp; Google Ads</h3>
+                            <p class="job-co">Digital Marketing, Freelance</p>
+                            <p class="job-stack">Google Maps, Google Business Profile, Google Ads, Local SEO, GA4</p>
+                            <details class="more">
+                                <summary><span class="t" data-vi="Chi tiết công việc" data-en="Responsibilities">Chi tiết công việc</span></summary>
+                                <ul>
+                                    <li><span class="t" data-vi="Tạo và thiết lập địa điểm doanh nghiệp trên Google Maps / Google Business Profile." data-en="Created and configured business locations on Google Maps / Google Business Profile.">Tạo và thiết lập địa điểm doanh nghiệp trên Google Maps / Google Business Profile.</span></li>
+                                    <li><span class="t" data-vi="Thiết lập và tối ưu thông tin doanh nghiệp, danh mục, địa chỉ, số điện thoại, website, hình ảnh và các thông tin liên quan." data-en="Configured and optimized business information, categories, addresses, phone numbers, websites, images, and related information.">Thiết lập và tối ưu thông tin doanh nghiệp, danh mục, địa chỉ, số điện thoại, website, hình ảnh và các thông tin liên quan.</span></li>
+                                    <li><span class="t" data-vi="Triển khai và quản lý quảng cáo Google Ads, theo dõi ngân sách, lượt hiển thị, lượt nhấp và hiệu quả chiến dịch." data-en="Set up and managed Google Ads campaigns, monitoring budgets, impressions, clicks, and campaign performance.">Triển khai và quản lý quảng cáo Google Ads, theo dõi ngân sách, lượt hiển thị, lượt nhấp và hiệu quả chiến dịch.</span></li>
+                                    <li><span class="t" data-vi="Thực hiện cho 6 địa điểm doanh nghiệp và kết hợp Google Maps, website và quảng cáo để tăng khả năng tiếp cận khách hàng." data-en="Implemented Google Maps and advertising solutions for 6 business locations, connecting Google Maps, websites, and advertising campaigns to improve customer reach.">Thực hiện cho 6 địa điểm doanh nghiệp và kết hợp Google Maps, website và quảng cáo để tăng khả năng tiếp cận khách hàng.</span></li>
+                                </ul>
+                                <div class="links">
+                                    <a href="https://maps.app.goo.gl/PFNVKy1QgvzFDBdn9" target="_blank" rel="noopener noreferrer">Quiin Nail</a>
+                                    <a href="https://maps.app.goo.gl/gJL6NpFFn4cxoMSt8" target="_blank" rel="noopener noreferrer">Dưỡng Tâm An</a>
+                                    <a href="https://share.google/x8iyt3MmftEuL8ArR" target="_blank" rel="noopener noreferrer">Thân Dưỡng Cổ Vai Gáy, <span class="t" data-vi="cơ sở" data-en="branch">cơ sở</span> 1</a>
+                                    <a href="https://share.google/Gw3ZYjXwME5GMr1cx" target="_blank" rel="noopener noreferrer">Thân Dưỡng Cổ Vai Gáy, <span class="t" data-vi="cơ sở" data-en="branch">cơ sở</span> 2</a>
+                                    <a href="https://share.google/6GuiTjbnKMt4uuRVd" target="_blank" rel="noopener noreferrer">Thân Dưỡng Cổ Vai Gáy, <span class="t" data-vi="cơ sở" data-en="branch">cơ sở</span> 3</a>
+                                    <a href="https://share.google/F18kJl6djM3AJtu56" target="_blank" rel="noopener noreferrer">Thân Dưỡng Cổ Vai Gáy, <span class="t" data-vi="cơ sở" data-en="branch">cơ sở</span> 4</a>
+                                </div>
+                            </details>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="job-when num"><span class="t" data-vi="12/2021 đến 03/2022" data-en="12/2021 to 03/2022">12/2021 đến 03/2022</span><br><span class="muted">Full-time</span></p>
+                        <div>
+                            <h3>Fullstack Developer</h3>
+                            <p class="job-co"><span class="t" data-vi="Công ty cổ phần thanh toán Hưng Hà" data-en="HUNG HA PAY JOINT STOCK COMPANY">Công ty cổ phần thanh toán Hưng Hà</span>, <span class="t" data-vi="Hà Nội" data-en="Hanoi">Hà Nội</span></p>
+                            <p class="job-stack">HTML/CSS, JavaScript, PHP (CodeIgniter), MySQL, Figma</p>
+                            <details class="more">
+                                <summary><span class="t" data-vi="Chi tiết công việc" data-en="Responsibilities">Chi tiết công việc</span></summary>
+                                <ul>
+                                    <li><span class="t" data-vi="Cắt CV, cắt giao diện, code các chức năng, hoàn thiện website dành cho ứng viên và nhà tuyển dụng" data-en="Cutting CVs, cutting interfaces, coding functionalities, completing the website for candidates and recruiters.">Cắt CV, cắt giao diện, code các chức năng, hoàn thiện website dành cho ứng viên và nhà tuyển dụng</span></li>
+                                    <li><span class="t" data-vi="Phát triển các tính năng mới, sửa lỗi và tối ưu hóa hiệu suất của website" data-en="Developing new features, fixing bugs, and optimizing website performance.">Phát triển các tính năng mới, sửa lỗi và tối ưu hóa hiệu suất của website</span></li>
+                                    <li><span class="t" data-vi="Phối hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án" data-en="Collaborating with team members to ensure project quality and progress.">Phối hợp với các thành viên trong nhóm để đảm bảo chất lượng và tiến độ dự án</span></li>
+                                </ul>
+                            </details>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="about" class="sec sec-about band">
+            <div class="container">
+                <h2 class="statement"><span class="t" data-vi="Tôi tạo ra những trải nghiệm web đáng nhớ." data-en="I craft memorable web experiences that matter.">Tôi tạo ra những trải nghiệm web đáng nhớ.</span></h2>
+                <div class="about-cols">
+                    <p class="clamp" data-lines="5"><span class="t" data-vi="Tôi là Web Developer với hơn 4 năm kinh nghiệm phát triển website, từ xây dựng giao diện bằng HTML, CSS, JavaScript đến phát triển và tùy chỉnh chức năng với PHP, Drupal và WordPress. Tôi có kinh nghiệm tích hợp API, xử lý lỗi kỹ thuật và tối ưu hiệu năng website. Bên cạnh lập trình, tôi còn có kinh nghiệm về Google Business Profile, Google Ads và tối ưu SEO, hướng đến xây dựng những website hiệu quả, thân thiện với người dùng và đáp ứng nhu cầu thực tế của doanh nghiệp." data-en="I am a Web Developer with over 4 years of experience in web development, from building user interfaces with HTML, CSS, and JavaScript to developing and customizing functionality with PHP, Drupal, and WordPress. I have experience with API integration, debugging, and website performance optimization. In addition to development, I have experience with Google Business Profile, Google Ads, and SEO, focusing on building effective, user-friendly websites that meet real business needs.">Tôi là Web Developer với hơn 4 năm kinh nghiệm phát triển website, từ xây dựng giao diện bằng HTML, CSS, JavaScript đến phát triển và tùy chỉnh chức năng với PHP, Drupal và WordPress. Tôi có kinh nghiệm tích hợp API, xử lý lỗi kỹ thuật và tối ưu hiệu năng website. Bên cạnh lập trình, tôi còn có kinh nghiệm về Google Business Profile, Google Ads và tối ưu SEO, hướng đến xây dựng những website hiệu quả, thân thiện với người dùng và đáp ứng nhu cầu thực tế của doanh nghiệp.</span></p>
+                    <p class="clamp" data-lines="5"><span class="t" data-vi="Với nền tảng về thiết kế và lập trình, tôi có khả năng chuyển hóa ý tưởng thành sản phẩm thực tế. Tôi chú trọng đến chi tiết, từ animation mượt mà đến code sạch, có thể bảo trì. Ngoài công việc, tôi thường đóng góp vào các dự án open-source và chia sẻ kiến thức trong cộng đồng dev Việt Nam. Bên cạnh lập trình, tôi có kinh nghiệm Digital Marketing: thiết lập Google Business Profile, tối ưu Local SEO, chạy Google Ads và theo dõi hiệu quả bằng GA4, giúp website không chỉ đẹp mà còn tiếp cận đúng khách hàng." data-en="With a background in both design and engineering, I bridge the gap between ideas and execution. I care about details, from smooth animations to clean, maintainable code. Outside work, I contribute to open-source and share knowledge in the Vietnamese dev community. Beyond coding, I have hands-on Digital Marketing experience: setting up Google Business Profile, optimizing Local SEO, running Google Ads, and tracking results with GA4, so websites don't just look good but also reach the right customers.">Với nền tảng về thiết kế và lập trình, tôi có khả năng chuyển hóa ý tưởng thành sản phẩm thực tế. Tôi chú trọng đến chi tiết, từ animation mượt mà đến code sạch, có thể bảo trì. Ngoài công việc, tôi thường đóng góp vào các dự án open-source và chia sẻ kiến thức trong cộng đồng dev Việt Nam. Bên cạnh lập trình, tôi có kinh nghiệm Digital Marketing: thiết lập Google Business Profile, tối ưu Local SEO, chạy Google Ads và theo dõi hiệu quả bằng GA4, giúp website không chỉ đẹp mà còn tiếp cận đúng khách hàng.</span></p>
+                </div>
+                <dl class="stats">
+                    <div><dt class="t" data-vi="Năm kinh nghiệm" data-en="Years of experience">Năm kinh nghiệm</dt><dd class="num">4+</dd></div>
+                    <div><dt class="t" data-vi="Dự án đã hoàn thành" data-en="Projects completed">Dự án đã hoàn thành</dt><dd class="num">20+</dd></div>
+                    <div><dt class="t" data-vi="Khách hàng hài lòng" data-en="Happy clients">Khách hàng hài lòng</dt><dd class="num">12+</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="skills" class="sec sec-skills">
+            <div class="container skills-grid">
+                <h2><span class="t" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</span></h2>
+                <dl class="skills set">
+                    <div><dt>Frontend</dt><dd>HTML / CSS / SASS, JavaScript (ES6+), TypeScript, jQuery, React, Vue.js, Tailwind CSS, Bootstrap</dd></div>
+                    <div><dt>Backend &amp; Database</dt><dd>PHP, Node.js, REST API, MySQL</dd></div>
+                    <div><dt>CMS</dt><dd>WordPress, Drupal</dd></div>
+                    <div><dt><span class="t" data-vi="Công cụ &amp; Thiết kế" data-en="Tools &amp; Design">Công cụ &amp; Thiết kế</span></dt><dd>Git, Figma, Adobe XD, Photoshop</dd></div>
+                    <div><dt>Digital Marketing</dt><dd>Google Maps / Business Profile, Google Ads, GA4, Local SEO, Content Creation, CapCut / Video Editing</dd></div>
+                    <div><dt><span class="t" data-vi="Định hướng mở rộng" data-en="Expanding into">Định hướng mở rộng</span></dt><dd>Next.js, Nuxt, Node.js / Express, PostgreSQL, Docker</dd></div>
+                    <div><dt><span class="t" data-vi="Sở thích &amp; Kỹ năng khác" data-en="Additional Skills &amp; Interests">Sở thích &amp; Kỹ năng khác</span></dt><dd><p class="clamp" data-lines="2"><span class="t" data-vi="Ngoài lập trình web, tôi còn yêu thích dựng phim và khám phá các trải nghiệm kỹ thuật số qua game và sản phẩm tương tác. Tôi cũng ứng dụng các công cụ AI như ChatGPT, GitHub Copilot, Claude và Gemini để hỗ trợ nghiên cứu, phát triển tính năng, tối ưu mã nguồn, xử lý lỗi, tự động hóa tác vụ lặp lại và học nhanh công nghệ mới. Những sở thích và kỹ năng này giúp tôi rèn luyện tư duy hình ảnh, sáng tạo hơn và nâng cao nhạy cảm về trải nghiệm người dùng." data-en="Besides web development, I also enjoy video editing and exploring digital experiences through games and interactive products. I use AI tools such as ChatGPT, GitHub Copilot, Claude, and Gemini to support research, feature development, code optimization, debugging, task automation, and learning new technologies faster. These interests and skills help me improve my visual thinking, creativity, and user experience awareness.">Ngoài lập trình web, tôi còn yêu thích dựng phim và khám phá các trải nghiệm kỹ thuật số qua game và sản phẩm tương tác. Tôi cũng ứng dụng các công cụ AI như ChatGPT, GitHub Copilot, Claude và Gemini để hỗ trợ nghiên cứu, phát triển tính năng, tối ưu mã nguồn, xử lý lỗi, tự động hóa tác vụ lặp lại và học nhanh công nghệ mới. Những sở thích và kỹ năng này giúp tôi rèn luyện tư duy hình ảnh, sáng tạo hơn và nâng cao nhạy cảm về trải nghiệm người dùng.</span></p></dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="education" class="sec sec-edu">
+            <div class="container">
+                <h2><span class="t" data-vi="Học vấn &amp; Chứng chỉ" data-en="Education &amp; Certifications">Học vấn &amp; Chứng chỉ</span></h2>
+                <table class="edu">
+                    <thead>
+                        <tr><th scope="col" class="t" data-vi="Năm" data-en="Year">Năm</th><th scope="col" class="t" data-vi="Chương trình" data-en="Programme">Chương trình</th><th scope="col" class="t" data-vi="Nơi học" data-en="School">Nơi học</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="num"><span class="t" data-vi="2018 đến 2022" data-en="2018 to 2022">2018 đến 2022</span></td><th scope="row"><span class="t" data-vi="Chuyên ngành Công nghệ Thông tin" data-en="Information Technology Major">Chuyên ngành Công nghệ Thông tin</span></th><td><span class="t" data-vi="Trường Đại học Tài nguyên và Môi trường Hà Nội" data-en="Hanoi University of Natural Resource and Environment">Trường Đại học Tài nguyên và Môi trường Hà Nội</span></td></tr>
+                        <tr><td class="num">2021</td><th scope="row"><span class="t" data-vi="Khóa học ngắn hạn Fullstack Developer" data-en="Short-term Fullstack Developer Course">Khóa học ngắn hạn Fullstack Developer</span></th><td>Bach Khoa Aptech, <span class="t" data-vi="Hà Nội" data-en="Hanoi">Hà Nội</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="sec-contact ink">
+            <div class="container contact-grid">
+                <div class="contact-main">
+                    <h2><span class="t" data-vi="Hãy cùng nhau tạo ra điều tuyệt vời." data-en="Let's build something great together.">Hãy cùng nhau tạo ra điều tuyệt vời.</span></h2>
+                    <p class="contact-sub"><span class="t" data-vi="Tôi luôn sẵn sàng đón nhận các cơ hội mới và cộng tác thú vị. Hãy liên hệ tôi nếu bạn có dự án nào cần hợp tác hay có 1 ý tưởng về 1 trang web cho riêng mình." data-en="I'm always open to new opportunities and exciting collaborations. Please contact me if you have a project you'd like to work on or an idea for your own website.">Tôi luôn sẵn sàng đón nhận các cơ hội mới và cộng tác thú vị. Hãy liên hệ tôi nếu bạn có dự án nào cần hợp tác hay có 1 ý tưởng về 1 trang web cho riêng mình.</span></p>
+                    <a class="email" href="mailto:vubinh120720@gmail.com">vubinh120720@gmail.com</a>
+                </div>
+                <dl class="contact-list">
+                    <div><dt>Phone / Zalo</dt><dd><a href="https://zalo.me/0813626639" target="_blank" rel="noopener">+84 813 626 639</a></dd></div>
+                    <div><dt>Location</dt><dd><span class="t" data-vi="Hà Nội, Việt Nam" data-en="Hanoi, Vietnam">Hà Nội, Việt Nam</span></dd></div>
+                    <div><dt>GitHub</dt><dd><a href="https://github.com/vubinh127" target="_blank" rel="noopener noreferrer">github.com/vubinh127</a></dd></div>
+                    <div><dt>My CV</dt><dd><a href="./cv/CV-VU-LE-BINH.pdf" target="_blank" rel="noopener"><span class="t" data-vi="Xem CV PDF" data-en="View CV PDF">Xem CV PDF</span></a></dd></div>
+                </dl>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mast">
+        <div class="container">
+            <p class="mast-word" aria-hidden="true">Vũ Lê Bình</p>
+            <div class="mast-row">
+                <nav class="mast-links" aria-label="Footer">
+                    <a href="#portfolio"><span class="t" data-vi="Dự án" data-en="Projects">Dự án</span></a>
+                    <a href="#work"><span class="t" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</span></a>
+                    <a href="#about"><span class="t" data-vi="Giới thiệu" data-en="About">Giới thiệu</span></a>
+                    <a href="#contact"><span class="t" data-vi="Liên hệ" data-en="Contact">Liên hệ</span></a>
+                    <a href="#home"><span class="t" data-vi="Lên đầu trang" data-en="Back to top">Lên đầu trang</span></a>
+                </nav>
+                <p class="legal">© Vũ Lê Bình, Web Developer, <span class="t" data-vi="Hà Nội, Việt Nam" data-en="Hanoi, Vietnam">Hà Nội, Việt Nam</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
