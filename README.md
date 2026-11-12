@@ -43,7 +43,7 @@ The website is built entirely with **HTML, CSS, and Vanilla JavaScript**, withou
 
 ## 💼 Work Experience
 
-### Front-End Developer — Newwave Solutions JSC *(27/06/2022 – 27/11/2026)*
+### Web Developer — Newwave Solutions JSC *(27/06/2022 – 27/11/2026)*
 
 - Build user-facing components
 - Design and develop layouts, interfaces, and interactive elements using HTML, CSS, and JavaScript
