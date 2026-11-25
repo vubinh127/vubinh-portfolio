@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 – Không tìm thấy trang · Vũ Lê Bình</title>
+    <meta name="description" content="Trang bạn tìm không tồn tại. Quay lại portfolio của Vũ Lê Bình – Web Developer tại Hà Nội.">
+    <!-- Error pages must not be indexed -->
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" href="https://avatars.githubusercontent.com/vubinh127?s=64" type="image/png">
+
+    <!-- Absolute paths: this page is served for any missing URL, e.g. /a/b/c -->
+    <script src="/js/theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .nf {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        .nf-in {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            column-gap: var(--gap-columns);
+            row-gap: var(--space-xl);
+            align-items: center;
+            padding-block: var(--space-2xl);
+        }
+        .nf-copy { grid-column: 1 / 7; }
+        .nf-code { grid-column: 8 / 13; }
+        .nf-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: var(--space-md);
+            border-bottom: var(--rule-hair) solid var(--color-ink);
+            font-size: var(--text-xs);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .nf-top a { text-decoration: none; }
+        .nf-num {
+            margin: var(--space-xl) 0 0 -0.05em;
+            font: 400 clamp(7rem, 22vw, 15rem) / 0.9 var(--font-display);
+            letter-spacing: -0.05em;
+            color: var(--color-ink);
+        }
+        .nf-num span { color: var(--color-accent); }
+        .nf-title {
+            margin-top: var(--space-lg);
+            font: 400 clamp(1.75rem, 3vw, 2.75rem) / 1.1 var(--font-display);
+            color: var(--color-ink);
+        }
+        .nf-text {
+            max-width: 44ch;
+            margin-top: var(--space-md);
+            color: var(--color-ink-2);
+        }
+        .nf-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-xl);
+        }
+        .nf-code {
+            overflow: hidden;
+            border-radius: 10px;
+            background: oklch(17% 0.02 255);
+            border: 1px solid oklch(100% 0 0 / 0.09);
+            color: oklch(88% 0.01 240);
+            box-shadow: 0 30px 60px -30px oklch(10% 0.03 255 / 0.7);
+        }
+        .nf-bar {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 11px 14px;
+            border-bottom: 1px solid oklch(100% 0 0 / 0.08);
+            font: 500 12px / 1 ui-monospace, Menlo, Consolas, monospace;
+            color: oklch(70% 0.01 240);
+        }
+        .nf-bar i { width: 11px; height: 11px; border-radius: 50%; background: oklch(66% 0.19 25); }
+        .nf-bar i:nth-child(2) { background: oklch(80% 0.15 85); }
+        .nf-bar i:nth-child(3) { background: oklch(72% 0.17 150); }
+        .nf-bar span { margin-left: auto; }
+        .nf-pre {
+            margin: 0;
+            padding: var(--space-lg);
+            overflow-x: auto;
+            font: 400 13.5px / 1.8 ui-monospace, Menlo, Consolas, monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .nf-pre .m { color: oklch(74% 0.14 305); }
+        .nf-pre .p { color: oklch(80% 0.1 230); }
+        .nf-pre .e { color: oklch(70% 0.18 25); }
+        .nf-pre .c { color: oklch(58% 0.012 240); font-style: italic; }
+        .nf-pre .ok { color: oklch(82% 0.13 145); }
+        .nf-caret {
+            display: inline-block;
+            width: 0.6em;
+            height: 1.15em;
+            vertical-align: -0.2em;
+            background: oklch(78% 0.15 55);
+            animation: nf-blink 1s steps(1) infinite;
+        }
+        @keyframes nf-blink { 50% { opacity: 0; } }
+        @media (max-width: 899px) {
+            .nf-copy, .nf-code { grid-column: 1 / -1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .nf-caret { animation: none; }
+        }
+    </style>
+</head>
+
+<body class="proof">
+    <main class="nf">
+        <div class="container nf-in">
+            <div class="nf-copy">
+                <div class="nf-top">
+                    <a href="/">Vũ Lê Bình</a>
+                    <span class="t" data-vi="Lỗi 404" data-en="Error 404">Lỗi 404</span>
+                </div>
+                <p class="nf-num" aria-hidden="true">404<span>.</span></p>
+                <h1 class="nf-title t" data-vi="Trang này không tồn tại." data-en="This page doesn't exist.">Trang này không tồn tại.</h1>
+                <p class="nf-text t" data-vi="Có thể đường dẫn bị gõ sai hoặc trang đã được chuyển đi. Bạn có thể quay lại trang chủ, xem các dự án hoặc liên hệ trực tiếp với tôi." data-en="The link may be mistyped or the page has moved. You can head back home, browse my projects or get in touch directly.">Có thể đường dẫn bị gõ sai hoặc trang đã được chuyển đi. Bạn có thể quay lại trang chủ, xem các dự án hoặc liên hệ trực tiếp với tôi.</p>
+                <div class="nf-actions">
+                    <a href="/" class="btn btn-primary t" data-vi="Về trang chủ" data-en="Back to home">Về trang chủ</a>
+                    <a href="/#portfolio" class="btn t" data-vi="Xem dự án" data-en="View projects">Xem dự án</a>
+                    <a href="/#contact" class="btn t" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+                </div>
+            </div>
+            <figure class="nf-code" aria-hidden="true">
+                <div class="nf-bar"><i></i><i></i><i></i><span>terminal</span></div>
+<pre class="nf-pre"><span class="c">$ curl -I vubinh.id.vn<span id="nf-path">/...</span></span>
+<span class="m">HTTP/2</span> <span class="e">404 Not Found</span>
+
+<span class="c">// <span class="t" data-vi="Gợi ý đường đi:" data-en="Suggested routes:">Gợi ý đường đi:</span></span>
+<span class="p">GET</span> /            <span class="ok">200</span>  <span class="c">// <span class="t" data-vi="trang chủ" data-en="home">trang chủ</span></span>
+<span class="p">GET</span> /#portfolio <span class="ok">200</span>  <span class="c">// <span class="t" data-vi="dự án" data-en="projects">dự án</span></span>
+<span class="p">GET</span> /#contact   <span class="ok">200</span>  <span class="c">// <span class="t" data-vi="liên hệ" data-en="contact">liên hệ</span></span>
+<i class="nf-caret"></i></pre>
+            </figure>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            // Show the path the visitor actually asked for (as text, never HTML).
+            var path = document.getElementById('nf-path');
+            if (path) {
+                var asked = location.pathname + location.search;
+                try { asked = decodeURI(asked); } catch (e) {}
+                path.textContent = asked.slice(0, 80);
+            }
+
+            // Follow the language chosen on the main site.
+            var lang = 'vi';
+            try { if (localStorage.getItem('lang') === 'en') lang = 'en'; } catch (e) {}
+            if (lang === 'en') {
+                document.documentElement.lang = 'en';
+                document.title = '404 – Page not found · Vũ Lê Bình';
+                Array.prototype.forEach.call(document.querySelectorAll('.t'), function (el) {
+                    if (el.dataset.en) el.textContent = el.dataset.en;
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
