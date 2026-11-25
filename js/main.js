@@ -37,11 +37,33 @@
         b.addEventListener('click', () => { if (b.dataset.lang !== lang) applyLang(b.dataset.lang); })
     );
 
-    $('#theme-toggle').addEventListener('click', () => {
+    // Theme switch: the new theme expands as a circle from the toggle button (View Transitions API).
+    // Falls back to an instant switch when unsupported or when the user prefers reduced motion.
+    let themeTransition = null;
+    const themeBtn = $('#theme-toggle');
+    themeBtn.addEventListener('click', () => {
         const current = root.dataset.mode || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         const next = current === 'dark' ? 'light' : 'dark';
-        root.dataset.mode = next;
-        store.set('theme', next);
+        const change = () => { root.dataset.mode = next; store.set('theme', next); };
+
+        if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return change();
+        if (themeTransition) { try { themeTransition.skipTransition(); } catch (e) {} }
+
+        const r = themeBtn.getBoundingClientRect();
+        const x = r.left + r.width / 2, y = r.top + r.height / 2;
+        const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+
+        // Freeze CSS colour transitions so the "new" snapshot already has the final colours;
+        // otherwise elements with `transition: background-color/color` get captured mid-fade (still old theme).
+        root.classList.add('theme-switching');
+        const vt = themeTransition = document.startViewTransition(change);
+        vt.ready.then(() => root.animate(
+            { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+            { duration: 700, easing: 'cubic-bezier(.65,0,.35,1)', pseudoElement: '::view-transition-new(root)' }
+        )).catch(() => {});
+        vt.finished.finally(() => {
+            if (themeTransition === vt) { themeTransition = null; root.classList.remove('theme-switching'); }
+        });
     });
 
     const clamps = $$('.clamp');

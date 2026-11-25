@@ -9,14 +9,10 @@
   --space-xl: 40px;
   --space-2xl: 64px;
   --space-3xl: 96px;
-  --space-4xl: 144px;
   --text-xs: 0.8125rem;
   --text-sm: 0.875rem;
   --text-md: 1rem;
-  --text-lg: 1.25rem;
   --text-xl: 1.5625rem;
-  --text-2xl: 1.953rem;
-  --text-3xl: 2.441rem;
   --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem);
   --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
   --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem);
@@ -27,22 +23,14 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-micro: 120ms;
   --dur-short: 220ms;
-  --dur-long: 420ms;
-  --color-error: oklch(52% 0.19 27);
-  --color-success: oklch(50% 0.12 150);
   --container: 1440px;
   --gutter: 64px;
   --gap-columns: 32px;
   --section-gap-s: 120px;
   --section-gap: 144px;
   --section-gap-l: 176px;
-  --z-base: 1;
-  --z-raised: 10;
-  --z-dropdown: 100;
   --z-sticky: 200;
   --z-sticky-nav: 300;
-  --z-modal: 400;
-  --z-toast: 500;
   --z-tooltip: 600;
   --color-paper: oklch(97.2% 0.006 215);
   --color-paper-2: oklch(94% 0.009 215);
@@ -59,19 +47,15 @@
   --color-mark: color-mix(in oklab, var(--color-ink) 72%, transparent);
   --font-display: "Newsreader", ui-serif, Georgia, serif;
   --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-outlier:
-    "Sofia Sans Extra Condensed", "Arial Narrow", ui-sans-serif, sans-serif;
   --radius-card: 3px;
   --radius-pill: 3px;
   --rule-hair: 1px;
-  --shadow-card: none;
   --shadow-sheet:
     1px 2px 0 color-mix(in oklab, var(--color-ink) 7%, transparent),
     10px 18px 36px -14px color-mix(in oklab, var(--color-ink) 32%, transparent);
   --tracking-display: -0.022em;
   --display-weight: 400;
   --color-otw: oklch(66% 0.16 150);
-  --color-otw-ink: oklch(16% 0.032 250);
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 [data-mode="dark"] {
@@ -86,7 +70,6 @@
   --color-accent: oklch(72% 0.165 52);
   --color-accent-ink: oklch(16% 0.032 250);
   --color-focus: oklch(76% 0.16 52);
-  --color-otw-ink: oklch(16% 0.032 250);
   --shadow-sheet: inset 0 0 0 1px var(--color-rule);
 }
 @media (prefers-color-scheme: dark) {
@@ -102,7 +85,6 @@
     --color-accent: oklch(72% 0.165 52);
     --color-accent-ink: oklch(16% 0.032 250);
     --color-focus: oklch(76% 0.16 52);
-    --color-otw-ink: oklch(16% 0.032 250);
     --shadow-sheet: inset 0 0 0 1px var(--color-rule);
   }
 }

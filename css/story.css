@@ -3,25 +3,6 @@
    (both set by js/story.js), so the page reads fine without JS. */
 
 /* ================================================================ Tokens */
-.is-ink {
-  --color-paper: oklch(13% 0.012 250);
-  --color-paper-2: oklch(17% 0.014 250);
-  --color-paper-3: oklch(22% 0.016 248);
-  --color-paper-hi: oklch(19% 0.014 250);
-  --color-ink: oklch(96% 0.006 215);
-  --color-ink-2: oklch(84% 0.01 220);
-  --color-muted: oklch(68% 0.014 225);
-  --color-rule: oklch(30% 0.016 245);
-  --color-focus: oklch(76% 0.16 52);
-  --shadow-sheet: inset 0 0 0 1px var(--color-rule);
-  background: var(--color-paper);
-  color: var(--color-ink-2);
-}
-.is-ink h2,
-.is-ink h3,
-.is-ink a {
-  color: var(--color-ink);
-}
 :root {
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 }
@@ -509,12 +490,6 @@
   align-items: center;
   padding: 0 var(--gutter) var(--space-md);
   pointer-events: none;
-  color: oklch(16% 0.032 250);
-}
-.hs[data-tone="dark"] .hs-ui {
-  color: oklch(97% 0.005 215);
-}
-[data-mode="dark"] .hs[data-tone="light"] .hs-ui {
   color: var(--color-ink);
 }
 .hs-ui a {
@@ -764,9 +739,6 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--color-muted);
-}
-.is-ink .ms-next {
   color: var(--color-muted);
 }
 .ms-next:hover {

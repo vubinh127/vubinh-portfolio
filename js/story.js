@@ -139,7 +139,6 @@
             if (i === active) return;
             active = i;
             slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
-            hs.dataset.tone = slides[i].classList.contains('is-ink') ? 'dark' : 'light';
         };
 
         onFrame.push(() => {
